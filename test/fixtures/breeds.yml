@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  akc_standard: MyString
+  size: MyString
+  intro_year: 1
+  akc_rank: 1
+  energy_level: 1
+  group_id: 
+
+two:
+  name: MyString
+  akc_standard: MyString
+  size: MyString
+  intro_year: 1
+  akc_rank: 1
+  energy_level: 1
+  group_id: 
