@@ -1,4 +1,50 @@
 Rails.application.routes.draw do
+  get 'groups/index'
+
+  get 'groups/show'
+
+  get 'breeds/index'
+
+  get 'breeds/show'
+
+  get 'breeds/new'
+
+  get 'breeds/create'
+
+  get 'breeds/edit'
+
+  get 'breeds/update'
+
+  get 'breeds/destroy'
+
+  get 'organizations/index'
+
+  get 'organizations/show'
+
+  get 'organizations/new'
+
+  get 'organizations/create'
+
+  get 'organizations/edit'
+
+  get 'organizations/update'
+
+  get 'organizations/destroy'
+
+  get 'dogs/index'
+
+  get 'dogs/show'
+
+  get 'dogs/new'
+
+  get 'dogs/create'
+
+  get 'dogs/edit'
+
+  get 'dogs/update'
+
+  get 'dogs/destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
