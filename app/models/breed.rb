@@ -1,5 +1,5 @@
 class Breed < ActiveRecord::Base
-  has_many :breed_traits
-  has_many :traits, :through => :breed_traits
+  has_many :btraits
+  has_many :traits, :through => :btraits
   belongs_to :group
 end

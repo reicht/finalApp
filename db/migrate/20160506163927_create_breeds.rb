@@ -2,7 +2,6 @@ class CreateBreeds < ActiveRecord::Migration
   def change
     create_table :breeds do |t|
       t.string :name, null: false
-      t.string :akc_standard, null: false
       t.string :size, null: false
       t.integer :intro_year, null: false
       t.integer :akc_rank

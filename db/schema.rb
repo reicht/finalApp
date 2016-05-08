@@ -16,19 +16,8 @@ ActiveRecord::Schema.define(version: 20160506164557) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "breed_traits", force: :cascade do |t|
-    t.integer  "breed_id"
-    t.integer  "trait_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "breed_traits", ["breed_id"], name: "index_breed_traits_on_breed_id", using: :btree
-  add_index "breed_traits", ["trait_id"], name: "index_breed_traits_on_trait_id", using: :btree
-
   create_table "breeds", force: :cascade do |t|
     t.string   "name",         null: false
-    t.string   "akc_standard", null: false
     t.string   "size",         null: false
     t.integer  "intro_year",   null: false
     t.integer  "akc_rank"
@@ -39,6 +28,16 @@ ActiveRecord::Schema.define(version: 20160506164557) do
   end
 
   add_index "breeds", ["group_id"], name: "index_breeds_on_group_id", using: :btree
+
+  create_table "btraits", force: :cascade do |t|
+    t.integer  "breed_id"
+    t.integer  "trait_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "btraits", ["breed_id"], name: "index_btraits_on_breed_id", using: :btree
+  add_index "btraits", ["trait_id"], name: "index_btraits_on_trait_id", using: :btree
 
   create_table "dogs", force: :cascade do |t|
     t.string   "name",            null: false
@@ -97,9 +96,9 @@ ActiveRecord::Schema.define(version: 20160506164557) do
   add_index "watches", ["organization_id"], name: "index_watches_on_organization_id", using: :btree
   add_index "watches", ["user_id"], name: "index_watches_on_user_id", using: :btree
 
-  add_foreign_key "breed_traits", "breeds"
-  add_foreign_key "breed_traits", "traits"
   add_foreign_key "breeds", "groups"
+  add_foreign_key "btraits", "breeds"
+  add_foreign_key "btraits", "traits"
   add_foreign_key "dogs", "breeds"
   add_foreign_key "dogs", "organizations"
   add_foreign_key "watches", "organizations"
