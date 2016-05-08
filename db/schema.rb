@@ -60,12 +60,12 @@ ActiveRecord::Schema.define(version: 20160506164557) do
   end
 
   create_table "organizations", force: :cascade do |t|
-    t.string   "name",         null: false
+    t.string   "name",        null: false
     t.string   "site_url"
     t.string   "description"
-    t.integer  "dogs_counter"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "dogs_count"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "traits", force: :cascade do |t|

@@ -4,7 +4,7 @@ class CreateOrganizations < ActiveRecord::Migration
       t.string :name, null: false
       t.string :site_url
       t.string :description
-      t.integer :dogs_counter
+      t.integer :dogs_count
 
       t.timestamps null: false
     end
