@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   include Clearance::User
   attr_accessor :password_confirmation
-  has_many :watches
+  acts_as_mappable
+  has_many :watches, dependent: :destroy
   has_many :organizations, :through => :watches
 end

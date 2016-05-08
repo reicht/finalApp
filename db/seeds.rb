@@ -31,19 +31,19 @@ end
 ##BREEDS##
 
 Breed.create(name: "Akita", size: "large", intro_year: 1972,
-            akc_rank: 47, energy_level: "medium", group_id: 7)
+            akc_rank: 47, energy_level: 2, group_id: 7)
 Btrait.create(breed_id: 1, trait_id: 3)
 Btrait.create(breed_id: 1, trait_id: 4)
 Btrait.create(breed_id: 1, trait_id: 6)
 
 Breed.create(name: "American Staffordshire Terrier", size: "medium", intro_year: 1936,
-            akc_rank: 80, energy_level: "medium", group_id: 5)
+            akc_rank: 80, energy_level: 2, group_id: 5)
 Btrait.create(breed_id: 2, trait_id: 2)
 Btrait.create(breed_id: 2, trait_id: 5)
 Btrait.create(breed_id: 2, trait_id: 8)
 
 Breed.create(name: "French Bulldog", size: "small", intro_year: 1898,
-            akc_rank: 6, energy_level: "medium", group_id: 3)
+            akc_rank: 6, energy_level: 2, group_id: 3)
 Btrait.create(breed_id: 3, trait_id: 1)
 Btrait.create(breed_id: 3, trait_id: 7)
 Btrait.create(breed_id: 3, trait_id: 8)
