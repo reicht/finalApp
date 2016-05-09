@@ -1,2 +1,9 @@
-<h1>Dogs#index</h1>
-<p>Find me in app/views/dogs/index.html.erb</p>
+<h1>Available Puppies!</h1>
+<% @organization.dogs.each do |dog| %>
+  <div class='col-md-offset-2 col-md-6 target'>
+    <hr>
+    <h3> <%= dog.name %> from <%= dog.organization.name %></h3>
+    <img src="<%=dog.picture_url%>" alt="<%=dog.name%>" height="250" width="250">
+    <%= link_to dog.name, dog.organization, class: 'btn btn-default btn-main' %>
+  </div>
+<% end %>

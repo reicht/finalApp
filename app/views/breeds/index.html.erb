@@ -1,2 +1,8 @@
-<h1>Breeds#index</h1>
-<p>Find me in app/views/breeds/index.html.erb</p>
+<h1>So Many Types of Puppy!</h1>
+<% @breeds.each do |breed| %>
+  <div class='col-md-offset-2 col-md-6 target'>
+    <hr>
+    <h3> The <%= breed.name %>.</h3>
+    <%= link_to breed.name, breed, class: 'btn btn-default btn-main' %>
+  </div>
+<% end %>

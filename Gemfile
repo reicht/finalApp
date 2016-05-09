@@ -41,6 +41,7 @@ end
 
 gem 'geokit-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'autoprefixer-rails'
 gem 'kaminari'
 gem 'faker'
 gem 'rails_admin'

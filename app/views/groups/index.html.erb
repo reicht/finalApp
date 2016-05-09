@@ -1,2 +1,8 @@
-<h1>Groups#index</h1>
-<p>Find me in app/views/groups/index.html.erb</p>
+<h1>The Puppy Parties</h1>
+<% @groups.each do |group| %>
+  <div class='col-md-offset-2 col-md-6 target'>
+    <hr>
+    <h3> The <%= group.name %> Group.</h3>
+    <%= link_to group.name, group, class: 'btn btn-default btn-main' %>
+  </div>
+<% end %>

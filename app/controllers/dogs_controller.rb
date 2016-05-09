@@ -1,6 +1,6 @@
 class DogsController < ApplicationController
   def index
-    @dogs = Dog.all
+    @organization = get_org
   end
 
   def show
@@ -48,6 +48,10 @@ class DogsController < ApplicationController
   private
   def get_dog
     Dog.find(params.fetch(:id))
+  end
+
+  def get_org
+    Organization.find(params.fetch(:organization_id))
   end
 
   def dog_params

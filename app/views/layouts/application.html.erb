@@ -3,12 +3,31 @@
 <head>
   <title>FinalApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <nav class='navbar navbar-default'>
+    <ul class="nav navbar-nav navbar">
+      <li><%= link_to "Home", root_path, class: "btn btn-success" %></li>
+      <li><%= link_to "Breeds", breeds_path, class: "btn btn-info" %></li>
+      <li><%= link_to "Groups", groups_path, class: "btn btn-info" %></li>
+      <li><%= link_to "Organizations", organizations_path, class: "btn btn-info" %></li>
+      <% unless signed_in? %>
+        <li> <%= link_to "Sign In", sign_in_path, class: "btn btn-success" %> </li>
+        <li> <%= link_to "Sign Up", sign_up_path, class: "btn btn-warning" %> </li>
+      <% else %>
+        <li> <%= link_to "Sign Out", sign_out_path, method: :DELETE, class: "btn btn-danger" %> </li>
+      <% end %>
+    </ul>
+  </nav>
 
+  <div class='container'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+
+    <%= yield %>
+  </div>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

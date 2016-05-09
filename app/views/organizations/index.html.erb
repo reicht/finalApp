@@ -1,2 +1,8 @@
 <h1>Organizations#index</h1>
-<p>Find me in app/views/organizations/index.html.erb</p>
+<% @organizations.each do |organization| %>
+  <div class='col-md-offset-2 col-md-6 target'>
+    <hr>
+    <h3> <%= organization.name %>.</h3>
+    <%= link_to organization.name, organization, class: 'btn btn-default btn-main' %>
+  </div>
+<% end %>
