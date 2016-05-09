@@ -39,6 +39,12 @@ group :development, :test do
   gem 'quiet_assets'
 end
 
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+end
+
 gem 'geokit-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'autoprefixer-rails'

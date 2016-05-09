@@ -4,6 +4,6 @@
     <hr>
     <h3> <%= dog.name %> from <%= dog.organization.name %></h3>
     <img src="<%=dog.picture_url%>" alt="<%=dog.name%>" height="250" width="250">
-    <%= link_to dog.name, dog.organization, class: 'btn btn-default btn-main' %>
+    <%= link_to dog.name, organization_dog_path(dog.organization, dog), class: 'btn btn-default btn-main' %>
   </div>
 <% end %>

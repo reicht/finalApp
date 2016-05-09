@@ -1,2 +1,14 @@
-<h1>Dogs#show</h1>
-<p>Find me in app/views/dogs/show.html.erb</p>
+<h1><%=@dog.name%></h1>
+<hr>
+<p><%=@dog.bio%></p>
+<p>Currently living at: <%=@dog.organization.name%></p>
+<hr>
+<h1><%=@dog.breed.name%></h1>
+<p> Inducted in the year: <%=@dog.breed.intro_year%></p>
+<p> Ranked <%=@dog.breed.akc_rank%> in popularity by the AKC.</p>
+<p> Belongs to the <%=@dog.breed.group.name%> group.</p>
+<p> Typically has a <%=@dog.breed.energy_level%> / 3 energy. </p>
+<p> Is typically a <%=@dog.breed.size%> sized breed.</p>
+<div class="row">
+<iframe src="http://www.akc.org/embeds/breed-standard/<%=@dog.breed.name.split(" ").join("-")%>" frameborder="0" width="100%" height="100%"></iframe>
+</div>

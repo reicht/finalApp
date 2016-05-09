@@ -1,2 +1,9 @@
-<h1>Breeds#show</h1>
-<p>Find me in app/views/breeds/show.html.erb</p>
+<h1><%=@breed.name%></h1>
+<p> Inducted in the year: <%=@breed.intro_year%></p>
+<p> Ranked <%=@breed.akc_rank%> in popularity by the AKC.</p>
+<p> Belongs to the <%=@breed.group.name%> group.</p>
+<p> Typically has a <%=@breed.energy_level%> / 3 energy. </p>
+<p> Is typically a <%=@breed.size%> sized breed.</p>
+<div class="row">
+<iframe src="http://www.akc.org/embeds/breed-standard/<%=@breed.name.split(" ").join("-")%>" frameborder="0" width="100%" height="100%"></iframe>
+</div>
