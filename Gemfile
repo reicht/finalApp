@@ -52,6 +52,7 @@ gem 'kaminari'
 gem 'faker'
 gem 'rails_admin'
 gem 'clearance'
+gem 'react-rails', '~> 1.7.0'
 
 group :production do
   gem 'rails_12factor'
