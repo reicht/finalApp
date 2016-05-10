@@ -1,3 +1,13 @@
+### GROUPS
+Herding - 1
+Hound - 2
+Non Sporting - 3
+Sporting - 4
+Terrier - 5
+Toy - 6
+Working - 7
+FSS - 8 NA
+Miscellaneous - 9 NA
 ### BREEDS
 ##A
 --------

@@ -22,7 +22,7 @@ end
 
 ##TRAITS##
 
-traits = ["Adaptable", "Confident", "Courageous", "Dignified", "Good-Natured", "Loyal", "Playful", "Smart"]
+# traits = ["Adaptable", "Confident", "Courageous", "Dignified", "Good-Natured", "Loyal", "Playful", "Smart"]
 traits = ["Affectionate",
           "Alert",
           "Bouncy",
@@ -72,31 +72,105 @@ traits = ["Affectionate",
           "Sweet",
           "Sweet-Tempered",
           "Watchful",
-          "Work-Oriented"]
+          "Work-Oriented",
+          "Adaptable"]
 
 traits.each do |trait_name|
   Trait.create(name: trait_name)
 end
 
-##BREEDS##
+##BREEDS##NEED BREED TRAIT TOUChUPS  ########
+
+
+Breed.create(name: "Affenpinscher", size: "small", intro_year: 1936,
+            akc_rank: 141, energy_level: 2, group_id: 6)
+Btrait.create(breed_id: 1, trait_id: 10)
+Btrait.create(breed_id: 1, trait_id: 22)
+Btrait.create(breed_id: 1, trait_id: 19)
+
+Breed.create(name: "Afghan Hound", size: "large", intro_year: 1926,
+            akc_rank: 104, energy_level: 3, group_id: 2)
+Btrait.create(breed_id: 2, trait_id: 27)
+Btrait.create(breed_id: 2, trait_id: 47)
+Btrait.create(breed_id: 2, trait_id: 42)
+
+Breed.create(name: "Airedale Terrier", size: "medium", intro_year: 1888,
+            akc_rank: 54, energy_level: 2, group_id: 5)
+Btrait.create(breed_id: 3, trait_id: 9)
+Btrait.create(breed_id: 3, trait_id: 20)
+Btrait.create(breed_id: 3, trait_id: 11)
 
 Breed.create(name: "Akita", size: "large", intro_year: 1972,
             akc_rank: 47, energy_level: 2, group_id: 7)
-Btrait.create(breed_id: 1, trait_id: 3)
-Btrait.create(breed_id: 1, trait_id: 4)
-Btrait.create(breed_id: 1, trait_id: 6)
+Btrait.create(breed_id: 4, trait_id: 11)
+Btrait.create(breed_id: 4, trait_id: 13)
+Btrait.create(breed_id: 4, trait_id: 30)
+
+Breed.create(name: "Alaskan Malamute", size: "large", intro_year: 1935,
+            akc_rank: 55, energy_level: 3, group_id: 7)
+Btrait.create(breed_id: 5, trait_id: 1)
+Btrait.create(breed_id: 5, trait_id: 30)
+Btrait.create(breed_id: 5, trait_id: 37)
+
+Breed.create(name: "American English Coonhound", size: "large", intro_year: 2011,
+            akc_rank: 171, energy_level: 3, group_id: 2)
+Btrait.create(breed_id: 6, trait_id: 31)
+Btrait.create(breed_id: 6, trait_id: 44)
+Btrait.create(breed_id: 6, trait_id: 47)
+
+Breed.create(name: "American Eskimo Dog", size: "medium", intro_year: 1994,
+            akc_rank: 123, energy_level: 2, group_id: 3)
+Btrait.create(breed_id: 7, trait_id: 36)
+Btrait.create(breed_id: 7, trait_id: 37)
+Btrait.create(breed_id: 7, trait_id: 43)
+
+Breed.create(name: "American Foxhound", size: "large", intro_year: 1886,
+            akc_rank: 186, energy_level: 3, group_id: 2)
+Btrait.create(breed_id: 8, trait_id: 15)
+Btrait.create(breed_id: 8, trait_id: 27)
+Btrait.create(breed_id: 8, trait_id: 48)
 
 Breed.create(name: "American Staffordshire Terrier", size: "medium", intro_year: 1936,
             akc_rank: 80, energy_level: 2, group_id: 5)
-Btrait.create(breed_id: 2, trait_id: 2)
-Btrait.create(breed_id: 2, trait_id: 5)
-Btrait.create(breed_id: 2, trait_id: 8)
+Btrait.create(breed_id: 9, trait_id: 10)
+Btrait.create(breed_id: 9, trait_id: 24)
+Btrait.create(breed_id: 9, trait_id: 43)
+
+Breed.create(name: "American Water Spaniel", size: "medium", intro_year: 1940,
+            akc_rank: 162, energy_level: 2, group_id: 4)
+Btrait.create(breed_id: 10, trait_id: 8)
+Btrait.create(breed_id: 10, trait_id: 14)
+Btrait.create(breed_id: 10, trait_id: 25)
+
+Breed.create(name: "Anatolian Shepard Dog", size: "large", intro_year: 1996,
+            akc_rank: 96, energy_level: 2, group_id: 7)
+Btrait.create(breed_id: 11, trait_id: 27)
+Btrait.create(breed_id: 11, trait_id: 30)
+Btrait.create(breed_id: 11, trait_id: 40)
+
+Breed.create(name: "Australian Cattle Dog", size: "medium", intro_year: 1980,
+            akc_rank: 58, energy_level: 3, group_id: 1)
+Btrait.create(breed_id: 12, trait_id: 2)
+Btrait.create(breed_id: 12, trait_id: 12)
+Btrait.create(breed_id: 12, trait_id: 38)
+
+Breed.create(name: "Australian Shepherd", size: "medium", intro_year: 1991,
+            akc_rank: 17, energy_level: 3, group_id: 1)
+Btrait.create(breed_id: 13, trait_id: 17)
+Btrait.create(breed_id: 13, trait_id: 43)
+Btrait.create(breed_id: 13, trait_id: 50)
+
+Breed.create(name: "Australian Terrier", size: "small", intro_year: 1960,
+            akc_rank: 130, energy_level: 3, group_id: 5)
+Btrait.create(breed_id: 14, trait_id: 1)
+Btrait.create(breed_id: 14, trait_id: 11)
+Btrait.create(breed_id: 14, trait_id: 45)
 
 Breed.create(name: "French Bulldog", size: "small", intro_year: 1898,
             akc_rank: 6, energy_level: 2, group_id: 3)
-Btrait.create(breed_id: 3, trait_id: 1)
-Btrait.create(breed_id: 3, trait_id: 7)
-Btrait.create(breed_id: 3, trait_id: 8)
+Btrait.create(breed_id: 15, trait_id: 37)
+Btrait.create(breed_id: 15, trait_id: 43)
+Btrait.create(breed_id: 15, trait_id: 51)
 
 ##ORGANIZATIONS##
 
