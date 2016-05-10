@@ -7,7 +7,9 @@
 </head>
 <body>
 
-  <nav class='navbar navbar-default'>
+  <%= react_component("Nav_bar")%>
+
+  <!-- <nav class='navbar navbar-default'>
     <ul class="nav navbar-nav navbar">
       <li><%= link_to "Home", root_path, class: "btn btn-success" %></li>
       <li><%= link_to "Breeds", breeds_path, class: "btn btn-info" %></li>
@@ -37,7 +39,7 @@
         <li> <%= link_to "Sign Out", sign_out_path, method: :DELETE, class: "btn btn-danger" %> </li>
       <% end %>
     </ul>
-  </nav>
+  </nav> -->
 
   <div class='container'>
     <%= flash[:notice] %>
