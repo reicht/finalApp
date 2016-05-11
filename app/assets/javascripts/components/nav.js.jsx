@@ -39,6 +39,3 @@ var Nav_bar = React.createClass({
       </Navbar>
       )}
 });
-
-<a className="btn btn-custom">click</a>
-<Button bsStyle="" className="btn-custom">click</Button>

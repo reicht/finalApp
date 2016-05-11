@@ -123,53 +123,53 @@ Bedlington Terrier
 
 ### TRAITS
 
-Affectionate
-Alert
-Bouncy
-Brave
-Bright
-Calm
-Charismatic
-Charming
-Clever
-Confident
-Courageous
-Curious
-Dignified
-Eager
-Easy-Going
-Energetic
-Exuberant
-Faithful
+Affectionate  1
+Alert  2
+Bouncy  3
+Brave  4
+Bright  5
+Calm  6
+Charismatic  7
+Charming  8
+Clever  9
+Confident  10
+Courageous  11
+Curious  12
+Dignified  13
+Eager  14
+Easy-Going  15
+Energetic  16
+Exuberant  17
+Faithful  18
 Fearless
-Friendly
-Frollicking
-Funny
-Gentle
-Good-Natured
-Happy
-Hardworking
-Independent
-Intelligent
-Low-Key
-Loyal
-Mellow
-Merry
-Obedient
-Patient
-Peppy
-Perky
-Playful
-Pleasant
-Poised
-Reserved
-Serious-Minded
-Silly
-Smart
-Sociable
-Spirited
-Strong
-Sweet
-Sweet-Tempered
-Watchful
-Work-Oriented
+Friendly  20
+Frollicking  21
+Funny  22
+Gentle  23
+Good-Natured  24
+Happy  25
+Hardworking  26
+Independent  27
+Intelligent  28
+Low-Key  29
+Loyal  30
+Mellow  31
+Merry  32
+Obedient  33
+Patient  34
+Peppy  35
+Perky  36
+Playful  37
+Pleasant  38
+Poised  39
+Reserved  40
+Serious-Minded  41
+Silly  42
+Smart  43
+Sociable  44
+Spirited  45
+Strong  46
+Sweet  47
+Sweet-Tempered  48
+Watchful  49
+Work-Oriented  50
