@@ -54,6 +54,7 @@ gem 'rails_admin'
 gem 'clearance'
 gem 'react-rails', '~> 1.5.0'
 gem 'react-bootstrap-rails'
+gem 'httparty'
 
 group :production do
   gem 'rails_12factor'

@@ -8,7 +8,7 @@ var Nav_bar = React.createClass({
 
   render: function () {
     return (
-      <Navbar inverse>
+      <Navbar inverse className="nav-custom">
         <Navbar.Header>
           <Navbar.Brand>
             <a href="/">Doogle</a>
@@ -39,3 +39,6 @@ var Nav_bar = React.createClass({
       </Navbar>
       )}
 });
+
+<a className="btn btn-custom">click</a>
+<Button bsStyle="" className="btn-custom">click</Button>
