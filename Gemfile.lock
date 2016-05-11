@@ -203,7 +203,7 @@ GEM
       json (~> 1.4)
     react-bootstrap-rails (0.28.3)
       rails (>= 3.1)
-    react-rails (1.7.0)
+    react-rails (1.5.0)
       babel-transpiler (>= 0.7.0)
       coffee-script-source (~> 1.8)
       connection_pool
@@ -272,7 +272,7 @@ DEPENDENCIES
   rails_12factor
   rails_admin
   react-bootstrap-rails
-  react-rails (~> 1.7.0)
+  react-rails (~> 1.5.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

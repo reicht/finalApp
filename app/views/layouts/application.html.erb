@@ -9,38 +9,6 @@
 
   <%= react_component("Nav_bar")%>
 
-  <!-- <nav class='navbar navbar-default'>
-    <ul class="nav navbar-nav navbar">
-      <li><%= link_to "Home", root_path, class: "btn btn-success" %></li>
-      <li><%= link_to "Breeds", breeds_path, class: "btn btn-info" %></li>
-      <li><div class="btn-group">
-        <button type="button" class="btn btn-info"><a href="/groups">Groups</a></button>
-        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="caret"></span>
-          <span class="sr-only">Toggle Dropdown</span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="/groups/1">Herding</a></li>
-          <li><a href="/groups/2">Hound</a></li>
-          <li><a href="/groups/3">Non Sporting</a></li>
-          <li><a href="/groups/4">Sporting</a></li>
-          <li><a href="/groups/5">Terrier</a></li>
-          <li><a href="/groups/6">Toy</a></li>
-          <li><a href="/groups/7">Working</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">FSS and Misc</a></li>
-        </ul>
-      </div></li>
-      <li><%= link_to "Organizations", organizations_path, class: "btn btn-info" %></li>
-      <% unless signed_in? %>
-        <li> <%= link_to "Sign In", sign_in_path, class: "btn btn-success" %> </li>
-        <li> <%= link_to "Sign Up", sign_up_path, class: "btn btn-warning" %> </li>
-      <% else %>
-        <li> <%= link_to "Sign Out", sign_out_path, method: :DELETE, class: "btn btn-danger" %> </li>
-      <% end %>
-    </ul>
-  </nav> -->
-
   <div class='container'>
     <%= flash[:notice] %>
     <%= flash[:alert] %>
@@ -49,4 +17,7 @@
   </div>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
+<footer>
+  <%= react_component("Nav_trail")%>
+</footer>
 </html>

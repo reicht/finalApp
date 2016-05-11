@@ -11,27 +11,31 @@ var Nav_bar = React.createClass({
       <Navbar inverse>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">React-Bootstrap</a>
+            <a href="/">Doogle</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavItem eventKey={1} href="#">Link</NavItem>
-            <NavItem eventKey={2} href="#">Link</NavItem>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
+            <NavItem eventKey={1} href="/organizations">Organizations</NavItem>
+            <NavItem eventKey={2} href="/breeds">Breeds</NavItem>
+            <NavDropdown eventKey={3} title="Groups" id="basic-nav-dropdown">
+              <MenuItem eventKey={3.1} href="/groups/1">Herding</MenuItem>
+              <MenuItem eventKey={3.2} href="/groups/2">Hound</MenuItem>
+              <MenuItem eventKey={3.3} href="/groups/3">Non Sporting</MenuItem>
+              <MenuItem eventKey={3.4} href="/groups/4">Sporting</MenuItem>
+              <MenuItem eventKey={3.5} href="/groups/5">Terrier</MenuItem>
+              <MenuItem eventKey={3.6} href="/groups/6">Toy</MenuItem>
+              <MenuItem eventKey={3.7} href="/groups/7">Working</MenuItem>
               <MenuItem divider />
-              <MenuItem eventKey={3.3}>Separated link</MenuItem>
+              <MenuItem eventKey={3.8} href="/groups/8">FSS and Misc</MenuItem>
             </NavDropdown>
           </Nav>
             <Nav pullRight>
-              <NavItem eventKey={1} href="#">Link Right</NavItem>
-              <NavItem eventKey={2} href="#">Link Right</NavItem>
+              <NavItem eventKey={1} href="#">Purpose</NavItem>
+              <NavItem eventKey={2} href="#">Contact</NavItem>
             </Nav>
         </Navbar.Collapse>
       </Navbar>
       )}
-})
+});

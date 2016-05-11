@@ -36,6 +36,23 @@ body {
   background: #7C4DB0;
 }
 
-.fancy-spancy {
-  background: red;
+.navbar {
+  border-radius: 0;
+}
+
+.standard-bearer {
+  height: 1000px;
+  overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+  .standard-bearer {
+    height: 1200px;
+  }
+}
+
+@media (min-width: 700px) {
+  .standard-bearer {
+    height: 1750px;
+  }
 }

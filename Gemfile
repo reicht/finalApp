@@ -52,7 +52,7 @@ gem 'kaminari'
 gem 'faker'
 gem 'rails_admin'
 gem 'clearance'
-gem 'react-rails', '~> 1.7.0'
+gem 'react-rails', '~> 1.5.0'
 gem 'react-bootstrap-rails'
 
 group :production do
