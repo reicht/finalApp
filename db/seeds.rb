@@ -186,10 +186,24 @@ Watch.create(user_id: 2, organization_id: 1)
 
 ##DOGS##
 
-get_test_pups
+@filtered_dogs = get_test_pups(5)
 
-Dog.create(name: @filtered_dogs['dog1'][:name], bio: @filtered_dogs['dog1'][:description], picture_url: @filtered_dogs['dog1'][:med_pic_urls]['med_pic2'], breed_id: 15)
+dogcount = @filtered_dogs.count
+dognum = 0
 
+while dognum < dogcount
+
+  dognum += 1
+  Dog.create(name: @filtered_dogs.dig("dog" + dognum.to_s, :name), organization_id: 1, bio: @filtered_dogs.dig("dog" + dognum.to_s, :description), picture_url: @filtered_dogs.dig("dog" + dognum.to_s, :med_pic_urls, 'med_pic1'), breed_id: 15)
+
+end
+
+@filtered_dogs.each do |dog|
+
+
+  # Dog.create(name: "Steve", organization_id: 1, bio: "Steve", picture_url: "Steve", breed_id: 15)
+
+end
 # Dog.create(name: "Boscar", organization_id: 2, bio: "Boscar is a sweet little Frenchy who somehow ended up growing up with a litter of Shiba Inu brothers, so now he's fairly sure he is one.",
 #           picture_url: "https://s.graphiq.com/sites/default/files/465/media/images/t2/French_Bulldog_5204893.jpg", breed_id: 3)
 

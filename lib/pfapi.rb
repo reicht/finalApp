@@ -12,7 +12,7 @@ def get_token
 
 end
 
-def get_test_pups
+def get_test_pups(count)
   # WAS AUSTIN PETS ALIVE, CHANGED TO AUSTIN BOXER RESCUE FOR CONVENIENCE
 
   @petfinder_api_secret = ENV['PETFINDER_API_SECRET']
@@ -21,15 +21,20 @@ def get_test_pups
     get_token
   end
 
-  sig = Digest::MD5.hexdigest( @petfinder_api_secret + 'key=8a3be99af0e925900fb9b7fe8550ae07&id=TX898&format=json&token=' + @token)
-  response = HTTParty.get('http://api.petfinder.com/shelter.getPets?key=8a3be99af0e925900fb9b7fe8550ae07&id=TX898&format=json&token=' + @token + '&sig=' + sig)
+  if count <= 1
+    count = 2
+  end
+  count = count.to_s
+
+  sig = Digest::MD5.hexdigest( @petfinder_api_secret + 'key=8a3be99af0e925900fb9b7fe8550ae07&id=TX898&count=' + count + '&format=json&token=' + @token)
+  response = HTTParty.get('http://api.petfinder.com/shelter.getPets?key=8a3be99af0e925900fb9b7fe8550ae07&id=TX898&count=' + count + '&format=json&token=' + @token + '&sig=' + sig)
 
   pets = JSON.parse(response.body).fetch("petfinder").fetch("pets")
 
   dogs = []
 
   pets.fetch("pet").each do |pet|
-    if pet.fetch("animal").fetch("$t") == "Dog"
+    if pet.dig("animal", "$t") == "Dog"
       dogs << pet
     end
   end
@@ -49,6 +54,9 @@ def get_test_pups
       :mix => dog.dig("mix", "$t"),
       :options => dog.fetch("options"),
       :description => dog.dig("description", "$t"),
+      :contact => dog.fetch("contact"),
+      :shelter_id => dog.dig("shelterId", "$t"),
+      :last_update => dog.dig("lastUpdate", "$t"),
       :sml_pic_urls => {},
       :med_pic_urls => {},
       :lrg_pic_urls => {}
@@ -68,7 +76,7 @@ def get_test_pups
         elsif pic.fetch("@size") == "pn"
           med_pics += 1
 
-          @dogs_filtered["dog" + i.to_s][:med_pic_urls]["sml_pic" + med_pics.to_s] = pic.fetch("$t")
+          @dogs_filtered["dog" + i.to_s][:med_pic_urls]["med_pic" + med_pics.to_s] = pic.fetch("$t")
 
         elsif pic.fetch("@size") == "x"
           lrg_pics += 1
@@ -81,6 +89,6 @@ def get_test_pups
 
   end
 
-  binding.pry
+  return @dogs_filtered
 
 end

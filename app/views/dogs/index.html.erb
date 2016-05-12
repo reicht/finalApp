@@ -1,9 +1,15 @@
-<h1>Available Puppies!</h1>
-<% @organization.dogs.each do |dog| %>
-  <div class='col-md-offset-2 col-md-6 target'>
-    <hr>
-    <h3> <%= dog.name %> from <%= dog.organization.name %></h3>
-    <img src="<%=dog.picture_url%>" alt="<%=dog.name%>" height="250" width="250">
-    <%= link_to dog.name, organization_dog_path(dog.organization, dog), class: 'btn btn-default btn-main' %>
+<div class='row page-panel'>
+  <div class='span1'>
+    <div class='span10'>
+      <h1>Available Puppies!</h1>
+      <% @organization.dogs.each do |dog| %>
+      <div class='col-md-offset-2 col-md-6 target'>
+        <hr>
+        <h3> <%= dog.name %> from <%= dog.organization.name %></h3>
+        <img src="<%=dog.picture_url%>" alt="<%=dog.name%>" height="250" width="250">
+        <%= link_to dog.name, organization_dog_path(dog.organization, dog), class: 'btn btn-default btn-main' %>
+      </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

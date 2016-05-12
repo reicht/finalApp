@@ -1,8 +1,14 @@
-<h1>Puppy Pals</h1>
-<% @organizations.each do |organization| %>
-  <div class='col-md-offset-2 col-md-6 target'>
-    <hr>
-    <h3> <%= organization.name %>.</h3>
-    <%= link_to organization.name, organization, class: 'btn btn-default btn-main' %>
+<div class='row page-panel'>
+  <div class='span1'>
+    <div class='span10'>
+      <h1>Puppy Pals</h1>
+      <% @organizations.each do |organization| %>
+      <div class='col-md-offset-2 col-md-6 target'>
+        <hr>
+        <h3> <%= organization.name %>.</h3>
+        <%= link_to organization.name, organization, class: 'btn btn-default btn-main' %>
+      </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
