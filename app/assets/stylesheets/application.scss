@@ -46,8 +46,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-panel {
-  background: rgba(247, 255, 228, .5);
+  background: rgba(247, 255, 228, .85);
   padding: 1em;
+}
+
+.see-through {
+  background: rgba(247, 255, 228, .15);
 }
 
 .standard-bearer {

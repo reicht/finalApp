@@ -8,7 +8,7 @@
       <div class='col-md-offset-2 col-md-6 target'>
         <hr>
         <h3> <%= dog.name %> from <%= dog.organization.name %></h3>
-        <img src="<%=dog.picture_url%>" alt="<%=dog.name%>" height="250" width="250">
+        <img src="<%=dog.dog_pics.where(size: "medium").first.link%>" alt="<%=dog.name%>" height="250" width="250">
         <%= link_to dog.name, organization_dog_path(dog.organization, dog), class: 'btn btn-default btn-main' %>
       </div>
       <% end %>

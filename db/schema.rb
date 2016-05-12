@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506164557) do
+ActiveRecord::Schema.define(version: 20160512135534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,18 +39,52 @@ ActiveRecord::Schema.define(version: 20160506164557) do
   add_index "btraits", ["breed_id"], name: "index_btraits_on_breed_id", using: :btree
   add_index "btraits", ["trait_id"], name: "index_btraits_on_trait_id", using: :btree
 
+  create_table "dbreeds", force: :cascade do |t|
+    t.integer  "dog_id"
+    t.integer  "breed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "dbreeds", ["breed_id"], name: "index_dbreeds_on_breed_id", using: :btree
+  add_index "dbreeds", ["dog_id"], name: "index_dbreeds_on_dog_id", using: :btree
+
+  create_table "dog_pics", force: :cascade do |t|
+    t.integer  "dog_id"
+    t.string   "size",       null: false
+    t.string   "link",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "dog_pics", ["dog_id"], name: "index_dog_pics_on_dog_id", using: :btree
+
   create_table "dogs", force: :cascade do |t|
+    t.string   "pf_id",           null: false
+    t.string   "shelter_id",      null: false
     t.string   "name",            null: false
     t.string   "bio",             null: false
-    t.string   "picture_url"
+    t.string   "age",             null: false
+    t.string   "sex",             null: false
+    t.string   "size",            null: false
+    t.string   "mix",             null: false
+    t.datetime "last_update",     null: false
     t.integer  "organization_id"
-    t.integer  "breed_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
-  add_index "dogs", ["breed_id"], name: "index_dogs_on_breed_id", using: :btree
   add_index "dogs", ["organization_id"], name: "index_dogs_on_organization_id", using: :btree
+
+  create_table "dspecs", force: :cascade do |t|
+    t.integer  "dog_id"
+    t.integer  "spec_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "dspecs", ["dog_id"], name: "index_dspecs_on_dog_id", using: :btree
+  add_index "dspecs", ["spec_id"], name: "index_dspecs_on_spec_id", using: :btree
 
   create_table "groups", force: :cascade do |t|
     t.string   "name",        null: false
@@ -66,6 +100,12 @@ ActiveRecord::Schema.define(version: 20160506164557) do
     t.integer  "dogs_count"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "specs", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "traits", force: :cascade do |t|
@@ -99,8 +139,12 @@ ActiveRecord::Schema.define(version: 20160506164557) do
   add_foreign_key "breeds", "groups"
   add_foreign_key "btraits", "breeds"
   add_foreign_key "btraits", "traits"
-  add_foreign_key "dogs", "breeds"
+  add_foreign_key "dbreeds", "breeds"
+  add_foreign_key "dbreeds", "dogs"
+  add_foreign_key "dog_pics", "dogs"
   add_foreign_key "dogs", "organizations"
+  add_foreign_key "dspecs", "dogs"
+  add_foreign_key "dspecs", "specs"
   add_foreign_key "watches", "organizations"
   add_foreign_key "watches", "users"
 end

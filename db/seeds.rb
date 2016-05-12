@@ -194,21 +194,33 @@ dognum = 0
 while dognum < dogcount
 
   dognum += 1
-  Dog.create(name: @filtered_dogs.dig("dog" + dognum.to_s, :name), organization_id: 1, bio: @filtered_dogs.dig("dog" + dognum.to_s, :description), picture_url: @filtered_dogs.dig("dog" + dognum.to_s, :med_pic_urls, 'med_pic1'), breed_id: 15)
+  dog = "dog" + dognum.to_s
+  doog = Dog.create(name: @filtered_dogs.dig(dog, :name), organization_id: 1, bio: @filtered_dogs.dig(dog, :bio), pf_id: @filtered_dogs.dig(dog, :pf_id), last_update: @filtered_dogs.dig(dog, :last_update),
+            sex: @filtered_dogs.dig(dog, :sex), size: @filtered_dogs.dig(dog, :size), mix: @filtered_dogs.dig(dog, :mix), shelter_id: @filtered_dogs.dig(dog, :shelter_id), age: @filtered_dogs.dig(dog, :age))
+
+
+  sml_pic_count = @filtered_dogs.dig(dog, :sml_pic_urls).count
+  sml_pic_num = 0
+
+  while sml_pic_num < sml_pic_count
+    sml_pic_num += 1
+    DogPic.create(dog_id: doog.id, size: "small", link: @filtered_dogs.dig(dog, :sml_pic_urls, "sml_pic" + sml_pic_num.to_s))
+  end
+
+  med_pic_count = @filtered_dogs.dig(dog, :med_pic_urls).count
+  med_pic_num = 0
+
+  while med_pic_num < med_pic_count
+    med_pic_num += 1
+    DogPic.create(dog_id: doog.id, size: "medium", link: @filtered_dogs.dig(dog, :med_pic_urls, "med_pic" + med_pic_num.to_s))
+  end
+
+  lrg_pic_count = @filtered_dogs.dig(dog, :lrg_pic_urls).count
+  lrg_pic_num = 0
+
+  while lrg_pic_num < lrg_pic_count
+    lrg_pic_num += 1
+    DogPic.create(dog_id: doog.id, size: "large", link: @filtered_dogs.dig(dog, :lrg_pic_urls, "lrg_pic" + lrg_pic_num.to_s))
+  end
 
 end
-
-@filtered_dogs.each do |dog|
-
-
-  # Dog.create(name: "Steve", organization_id: 1, bio: "Steve", picture_url: "Steve", breed_id: 15)
-
-end
-# Dog.create(name: "Boscar", organization_id: 2, bio: "Boscar is a sweet little Frenchy who somehow ended up growing up with a litter of Shiba Inu brothers, so now he's fairly sure he is one.",
-#           picture_url: "https://s.graphiq.com/sites/default/files/465/media/images/t2/French_Bulldog_5204893.jpg", breed_id: 3)
-
-# Dog.create(name: "Giuliana", organization_id: 1, bio: "Giuliana's name may be quite a mouthfull but you'll adore this sweet little Pibble puppy.",
-#           picture_url: "https://fs01.androidpit.info/a/d5/d7/pitbull-pack-5-dog-wallpaper-d5d743-h900.jpg", breed_id: 2)
-#
-Dog.create(name: "Shackleford", organization_id: 1, bio: "Although Shackleford was originally meant to be a military dog, a chance gate being left open led him to a whirldwind life as a rodeo clown pup, which is now looking to retire into a nice home.",
-          picture_url: "http://www.allaboutdogs.net/wp-content/uploads/2015/04/Happy-Akita-Inu-dog-wallpaper.jpg", breed_id: 1)

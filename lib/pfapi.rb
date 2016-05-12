@@ -45,7 +45,7 @@ def get_test_pups(count)
   dogs.each do |dog|
     i = i+1
     @dogs_filtered["dog" + i.to_s] = {
-      :pfid => dog.dig("id", "$t"),
+      :pf_id => dog.dig("id", "$t"),
       :name => dog.dig("name", "$t"),
       :age => dog.dig("age", "$t"),
       :sex => dog.dig("sex", "$t"),
@@ -53,7 +53,7 @@ def get_test_pups(count)
       :breeds => dog.fetch("breeds"),
       :mix => dog.dig("mix", "$t"),
       :options => dog.fetch("options"),
-      :description => dog.dig("description", "$t"),
+      :bio => dog.dig("description", "$t"),
       :contact => dog.fetch("contact"),
       :shelter_id => dog.dig("shelterId", "$t"),
       :last_update => dog.dig("lastUpdate", "$t"),
