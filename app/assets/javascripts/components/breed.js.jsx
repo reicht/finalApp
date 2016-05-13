@@ -1,4 +1,5 @@
 var Jumbotron = ReactBootstrap.Jumbotron;
+var Glyphicon = ReactBootstrap.Glyphicon;
 var Button = ReactBootstrap.Button;
 
 var Breed = React.createClass({
@@ -8,7 +9,7 @@ var Breed = React.createClass({
     intro_year: React.PropTypes.number,
     akc_rank: React.PropTypes.number,
     energy_level: React.PropTypes.number,
-    group_id: React.PropTypes.number,
+    group: React.PropTypes.string,
     id: React.PropTypes.number
   },
 
@@ -18,26 +19,21 @@ var Breed = React.createClass({
   //       url: '/favs/create',
   //       data: {
   //         fav: {
-  //           cheese_id: this.props.id
+  //           organization_id: this.props.id
   //         }
   //       }
   //     });
   // },
 
-//   <div className = "row">
-//     <a href = {'/cheeses/' + this.props.id}>
-//     <div className='btn btn-info'>Cheese: {this.props.name}</div>
-//     </a>
-//     <div className='btn btn-primary pull-right' onClick={this.handleSubmit}>Love Dis Cheeze</div>
-//   </div>
-// );
-
   render: function() {
     return (
       <Jumbotron className="see-through">
-      <h1>{this.props.name}</h1>
-      <p>Simple Test Readout</p>
+      <h2>{this.props.name}</h2>
+      <h3>{this.props.group} Group</h3>
       <p>Ranked: {this.props.akc_rank}</p>
+      <p>Inducted into the AKC in: {this.props.intro_year}</p>
+      <p>Tends to be a {this.props.size} sized dog.</p>
+      <p>Energy Level: {this.props.energy_level} / <Glyphicon glyph="star" /><Glyphicon glyph="star" /><Glyphicon glyph="star" /></p>
       <p><Button bsStyle="primary">See the Standard</Button></p>
       </Jumbotron>
     );
