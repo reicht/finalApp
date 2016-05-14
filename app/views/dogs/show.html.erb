@@ -1,12 +1,13 @@
 <div class='row page-panel'>
   <div class='span1'>
     <div class='span10'>
-      <h1><%=@dog.name.upcase%></h1>
+      <%= react_component("Dog", name: @dog.name, size: @dog.size, age: @dog.age, sex: @dog.sex, bio: @dog.bio, id: @dog.id)%>
+      <!-- <h1><%=@dog.name.upcase%></h1>
       <%= react_component("DogPicsSlides", pics: @med_pics) %>
       <hr>
       <p><%=@dog.bio%></p>
       <p>Currently living at: <%=@dog.organization.name%></p>
-      <hr>
+      <hr> -->
     </div>
   </div>
 </div>

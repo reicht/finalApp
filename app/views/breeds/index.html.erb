@@ -1,15 +1,6 @@
 <div class='row page-panel'>
-  <div class='span1'>
-    <div class='span10'>
-      <h1>So Many Types of Puppies!</h1>
-      <%= react_component('Breeds', breeds: @breeds.all) %>
-      <!-- <% @breeds.each do |breed| %>
-      <div class='col-md-offset-2 col-md-6 target'>
-        <hr>
-        <h3> <%= breed.name %></h3>
-        <%= link_to breed.name, breed, class: 'btn btn-default btn-main' %>
-      </div>
-      <% end %> -->
-    </div>
+  <div class='col'>
+    <h1>So Many Types of Puppies!</h1>
+    <%= react_component('Breeds', breeds: @breeds.all) %>
   </div>
 </div>

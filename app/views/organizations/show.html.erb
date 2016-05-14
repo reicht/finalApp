@@ -4,14 +4,7 @@
       <h1><%=@organization.name.upcase%></h1>
       <p><%=@organization.description%></p>
       <a href="http://<%=@organization.site_url%>">Visit the <%=@organization.name%> HomePage.</a>
-      <% @organization.dogs.each do |dog| %>
-      <div class='col-md-offset-2 col-md-6 target'>
-        <hr>
-        <h3> <%= dog.name %> from <%= dog.organization.name %></h3>
-        <img src="<%=dog.dog_pics.where(size: "medium").first.link%>" alt="<%=dog.name%>" height="250" width="250">
-        <%= link_to dog.name, organization_dog_path(dog.organization, dog), class: 'btn btn-default btn-main' %>
-      </div>
-      <% end %>
+      <%= react_component("Dogs", dogs: @organization.dogs)%>
     </div>
   </div>
 </div>

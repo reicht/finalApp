@@ -1,7 +1,6 @@
 var Breeds = React.createClass({
   propTypes: {
-    breeds: React.PropTypes.array,
-    group_name: React.PropTypes.string
+    breeds: React.PropTypes.array
   },
 
   render: function() {
@@ -20,21 +19,21 @@ var Breeds = React.createClass({
           }
 
           var group_name = ''
-          if (result.breed_id === 1) {
+          if (result.group_id === 1) {
             group_name = 'Herding'
-          } else if (result.breed_id === 2) {
+          } else if (result.group_id === 2) {
             group_name = 'Hound'
-          } else if (result.breed_id === 3) {
+          } else if (result.group_id === 3) {
             group_name = 'Non Sporting'
-          } else if (result.breed_id === 4) {
+          } else if (result.group_id === 4) {
             group_name = 'Sporting'
-          } else if (result.breed_id === 5) {
+          } else if (result.group_id === 5) {
             group_name = 'Terrier'
-          } else if (result.breed_id === 6) {
+          } else if (result.group_id === 6) {
             group_name = 'Toy'
-          } else if (result.breed_id === 7) {
+          } else if (result.group_id === 7) {
             group_name = 'Working'
-          } else if (result.breed_id === 8) {
+          } else if (result.group_id === 8) {
             group_name = 'FSS'
           } else {
             group_name = 'Misc'

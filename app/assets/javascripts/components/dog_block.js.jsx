@@ -2,25 +2,24 @@ var Button = ReactBootstrap.Button;
 var Panel = ReactBootstrap.Panel;
 var Image = ReactBootstrap.Image;
 var Col = ReactBootstrap.Col;
+var Row = ReactBootstrap.Row;
 
 var DogPanel = React.createClass({
   propTypes: {
     name: React.PropTypes.string,
     age: React.PropTypes.string,
-    breeds: React.PropTypes.array,
     sex: React.PropTypes.string,
-    org_name: React.PropTypes.number,
+    pic_url: React.PropTypes.string,
+    organization_id: React.PropTypes.number,
     id: React.PropTypes.number
-
-
   },
 
 
   render() {
     return (
       <div>
-        <Panel className="see-through-panel">
-          <div className="row">
+        <Image src={this.props.pic_url} >
+          <div className="Row">
             <div classNam ="Col md={3}">
             </div>
             <div className="Col md={7}">
@@ -35,7 +34,7 @@ var DogPanel = React.createClass({
               </a>
             </div>
           </div>
-        </Panel>
+        </Image>
       </div>
     );
   }

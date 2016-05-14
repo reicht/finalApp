@@ -1,16 +1,8 @@
 <div class='row page-panel'>
   <div class='span1'>
     <div class='span10'>
-      <h1>Welcome to Doogle!</h1>
-      <div>
-        <p>Rescues in your area:</p>
-      </div>
-      <div>
-        <p>Puppies looking for love nearby:</p>
-      </div>
-      <div>
-        <p>Your watched organizations:</p>
-      </div>
+      <h1>Welcome <%=current_user.email%></h1>
+      <%= react_component("Dashboard", watched_orgs: @watched_orgs, recent_dogs: @recent_dogs, watched_recent_dogs: @watched_recent_dogs) %>
     </div>
   </div>
 </div>
