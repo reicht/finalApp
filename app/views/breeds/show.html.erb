@@ -2,15 +2,9 @@
   <div class='span1'>
     </div>
   <div class='span10'>
-    <h1><%=@breed.name.upcase%></h1>
-    <p> Inducted in the year: <%=@breed.intro_year%></p>
-    <p> Ranked <%=@breed.akc_rank%> in popularity by the AKC.</p>
-    <p> Belongs to the <%=@breed.group.name%> group.</p>
-    <p> Typically has a <%=@breed.energy_level%> / 3 energy. </p>
-    <p> Is typically a <%=@breed.size%> sized breed.</p>
-    <%= react_component("Breed", name: @breed.name.upcase, akc_rank: @breed.akc_rank, energy_level: @breed.energy_level, size: @breed.size, intro_year: @breed.intro_year, group: @breed.group.name) %>
+    <%= react_component("Breed", name: @breed.name.upcase, akc_rank: @breed.akc_rank, energy_level: @energy_array, size: @breed.size, intro_year: @breed.intro_year, group: @breed.group.name) %>
     <div class="row standard-bearer">
-      <iframe src="http://www.akc.org/embeds/breed-standard/<%=@breed.name.split(" ").join("-")%>" frameborder="0" width="90%" height="90%"></iframe>
+      <iframe src="http://www.akc.org/embeds/breed-standard/<%=@breed.name.downcase.split(" ").join("-")%>" frameborder="0" width="90%" height="90%"></iframe>
     </div>
   </div>
 </div>

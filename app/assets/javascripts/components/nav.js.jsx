@@ -17,7 +17,7 @@ var Nav_bar = React.createClass({
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavItem eventKey={1} href="/organizations">Organizations</NavItem>
+            <NavItem eventKey={1} href="/organizations">Dogs</NavItem>
             <NavItem eventKey={2} href="/breeds">Breeds</NavItem>
             <NavDropdown eventKey={3} title="Groups" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1} href="/groups/1">Herding</MenuItem>
@@ -27,8 +27,6 @@ var Nav_bar = React.createClass({
               <MenuItem eventKey={3.5} href="/groups/5">Terrier</MenuItem>
               <MenuItem eventKey={3.6} href="/groups/6">Toy</MenuItem>
               <MenuItem eventKey={3.7} href="/groups/7">Working</MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey={3.8} href="/groups/8">FSS and Misc</MenuItem>
             </NavDropdown>
           </Nav>
             <Nav pullRight>

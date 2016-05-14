@@ -1,4 +1,8 @@
 var Carousel = ReactBootstrap.Carousel;
+var Grid = ReactBootstrap.Grid;
+var Row = ReactBootstrap.Row;
+var Image = ReactBootstrap.Image;
+var Col = ReactBootstrap.Col;
 
 var DogPicsSlides = React.createClass({
   propTypes: {
@@ -6,56 +10,19 @@ var DogPicsSlides = React.createClass({
     id: React.PropTypes.number
   },
 
-  getInitialState() {
-      return {
-        index: 0,
-        direction: null
-      };
-    },
-
-    handleSelect(selectedIndex, e) {
-      alert('selected=' + selectedIndex + ', direction=' + e.direction);
-      this.setState({
-        index: selectedIndex,
-        direction: e.direction
-      });
-    },
-
   render: function() {
     return (
-      <Carousel activeIndex={this.state.index} direction={this.state.direction} onSelect={this.handleSelect}>
-        <Carousel.Item>
-          <img width={900} height={500} alt="900x500" src="/assets/carousel.png"/>
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img width={900} height={500} alt="900x500" src="/assets/carousel.png"/>
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img width={900} height={500} alt="900x500" src="/assets/carousel.png"/>
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+      <Grid>
+        <Row>
+        {this.props.pics.map(function(result, index) {
+          return (
+            <Col xs={6} md={4} key={index}>
+              <Image src={result} key={index+.1} thumbnail />
+            </Col>
+          )
+        })}
+        </Row>
+      </Grid>
     );
   }
-});
-
-  render() {
-    return (
-
-    );
-  }
-
-  [1,2,3].forEach(function(i) {
-  something();
 });

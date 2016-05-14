@@ -5,6 +5,10 @@ class BreedsController < ApplicationController
 
   def show
     @breed = get_breed
+    @energy_array = []
+    (1..@breed.energy_level).each do |num|
+      @energy_array << num
+    end
   end
 
   def new

@@ -2,6 +2,7 @@
   <div class='span1'>
     <div class='span10'>
       <h1><%=@dog.name.upcase%></h1>
+      <%= react_component("DogPicsSlides", pics: @med_pics) %>
       <hr>
       <p><%=@dog.bio%></p>
       <p>Currently living at: <%=@dog.organization.name%></p>

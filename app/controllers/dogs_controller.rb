@@ -5,6 +5,16 @@ class DogsController < ApplicationController
 
   def show
     @dog = get_dog
+    @med_pics = []
+    @lrg_pics = []
+
+    @dog.dog_pics.where(size: "medium").each do |pic|
+      @med_pics << pic.link
+    end
+
+    @dog.dog_pics.where(size: "large").each do |pic|
+      @lrg_pics << pic.link
+    end
   end
 
   def new
