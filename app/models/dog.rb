@@ -4,6 +4,16 @@ class Dog < ActiveRecord::Base
   has_many :dog_pics
   has_many :specs, :through => :dspecs
 
+  def set_prof_pics
+    unless self.dog_pics.where(size: "small").first.nil?
+      self.orgs_name = self.org_name
+      self.sm_prof_url = self.sm_pic_url
+      self.md_prof_url = self.md_pic_url
+      self.lg_prof_url = self.lg_pic_url
+      self.save
+    end
+  end
+
   def sm_pic_url
     return self.dog_pics.where(size: "small").first.link
   end

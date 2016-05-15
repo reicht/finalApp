@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20160512135534) do
     t.string   "sex",                                        null: false
     t.string   "size",                                       null: false
     t.string   "mix",                                        null: false
+    t.string   "orgs_name"
     t.string   "sm_prof_url"
     t.string   "md_prof_url"
     t.string   "lg_prof_url"

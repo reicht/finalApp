@@ -16,6 +16,7 @@
  @import "bootstrap";
 
 $primary-color: #222222;
+$border-color: rgba(255, 255, 255, .55);
 
 body {
   background-image: url("https://source.unsplash.com/collection/218829/1600x900");
@@ -57,9 +58,14 @@ a:hover {
   margin-bottom: 0;
 }
 
+.heart-spacer {
+  height: 5em;
+}
+
 .page-panel {
   background: rgba(247, 255, 228, .80);
   padding: 1em;
+  margin-bottom: 3em;
 }
 
 .see-through {
@@ -70,19 +76,49 @@ a:hover {
   background: rgba(247, 255, 228, .2);
 }
 
+.dog-block {
+  display: inline-block;
+  background-size: cover;
+  border: 2px;
+  border-style: solid;
+  margin: .2em;
+  width: 31%;
+  height: 17em;
+  padding: 0;
+  border-color: $border-color;
+}
+
+.panel {
+  border: 2px;
+  border-style: solid;
+  border-color: $border-color;
+}
+
+.dog-block-spacer {
+  height: 75%;
+}
+
+.dog-block-filter {
+  height: 25%;
+  width: 100%;
+  background-color: rgba(222, 222, 222, .65);
+  padding: 0.5em;
+}
+
+.pup-profile {
+  height: 260px;
+  width: 260px;
+}
+
 .standard-bearer {
   height: 1000px;
   overflow: hidden;
 }
 
-@media (min-width: 1200px) {
-  .standard-bearer {
-    height: 1200px;
-  }
-}
-
-@media (min-width: 700px) {
-  .standard-bearer {
-    height: 1750px;
-  }
+#footer {
+ position:fixed;
+ left:0px;
+ bottom:0px;
+ height:30px;
+ width:100%;
 }

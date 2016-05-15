@@ -10,21 +10,26 @@ var DogBlock = React.createClass({
     age: React.PropTypes.string,
     sex: React.PropTypes.string,
     pic_url: React.PropTypes.string,
+    org_name: React.PropTypes.string,
     id: React.PropTypes.number
   },
 
-
   render() {
+
+    var divImage = {
+    backgroundImage : "url(" + this.props.pic_url + ")"
+    };
+
     return (
-      <div>
-        <Image src={this.props.pic_url}>
-          <div className="Row">
-            <div className="Col">
-              <p>{this.props.name}</p>
-              <p>{this.props.age}   |   {this.props.sex}</p>
-            </div>
+      <div className="col-s-4 col-md-4 col-lg-4 dog-block" style={divImage}>
+        <a href={"/dogs/" + this.props.id}>
+          <div className="dog-block-spacer">
           </div>
-        </Image>
+          <div className="dog-block-filter">
+            <p>{this.props.name}</p>
+            <p>{this.props.age} | {this.props.sex}</p>
+          </div>
+        </a>
       </div>
     );
   }

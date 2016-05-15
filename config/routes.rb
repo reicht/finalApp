@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'watches/create'
+
   constraints Clearance::Constraints::SignedIn.new do
 
     delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
@@ -14,9 +16,11 @@ Rails.application.routes.draw do
     get "/contact" => "dashboard#contact", as: "contact_page"
     get "/purpose" => "dashboard#purpose", as: "purpose_pge"
 
-    resources :organizations, only: [:show, :index] do
-      resources :dogs, only: [:show, :index]
-    end
+    post "/watches" => "watches#create"
+
+    resources :organizations, only: [:show, :index]
+    resources :dogs, only: [:show, :index]
+
 
     resources :passwords, controller: "clearance/passwords", only: [:create, :new]
     resource :session, controller: "clearance/sessions", only: [:create]

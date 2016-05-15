@@ -8,7 +8,7 @@ var Orgs = React.createClass({
     return (
       <ul>
         {this.props.orgs.map(function(result, index) {
-          return <OrgBar name={result.name} id={result.id} description={result.description} site_url={result.site_url} key={index}/>;
+          return <OrgBar name={result.name} id={result.id} address={result.address} email={result.email} city={result.city} state={result.state} zip={result.zip} dog_count={result.dogs_count} key={index}/>;
         })}
       </ul>
     );

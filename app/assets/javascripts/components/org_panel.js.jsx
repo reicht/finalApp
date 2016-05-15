@@ -1,6 +1,7 @@
 var Panel = ReactBootstrap.Panel;
+var Button = ReactBootstrap.Button;
 
-var OrgBar = React.createClass({
+var OrgPanel = React.createClass({
   propTypes: {
     name: React.PropTypes.string,
     email: React.PropTypes.string,
@@ -34,15 +35,18 @@ var OrgBar = React.createClass({
               <p> Currently has {this.props.dog_count} dogs listed.                         {this.props.address} </p>
               <p> {this.props.city}, {this.props.state}, {this.props.zip} </p>
             </div>
+          </a>
             <div className="col-s-3 col-md-3 col-lg-3">
               <div className="col-s-4 col-md-4 col-lg-4">
               </div>
               <div className="col-s-4 col-md-4 col-lg-4">
+                <div className="heart-spacer">
+                </div>
+                <Button onClick={this.handleSubmit}><Glyphicon glyph="heart" /></Button>
               </div>
               <div className="col-s-4 col-md-4 col-lg-4">
               </div>
             </div>
-          </a>
         </div>
       </Panel>
     );

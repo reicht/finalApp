@@ -239,6 +239,8 @@ Organization.all.each do |org|
       DogPic.create(dog_id: doog.id, size: "large", link: filtered_dogs.dig(dog, :lrg_pic_urls, "lrg_pic" + lrg_pic_num.to_s))
     end
 
+    doog.set_prof_pics
+
   end
 
 end

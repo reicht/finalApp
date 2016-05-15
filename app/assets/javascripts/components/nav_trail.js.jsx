@@ -8,7 +8,7 @@ var NavTrail = React.createClass({
 
   render: function () {
     return (
-      <Navbar inverse className="nav-custom nav-bottom">
+      <Navbar inverse className="nav-custom nav-bottom" id="footer">
         <Navbar.Header>
           <Navbar.Brand>
             <p>Doogle</p>

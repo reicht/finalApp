@@ -1,8 +1,10 @@
 <div class='row page-panel'>
-  <div class='span1'>
-    <div class='span10'>
-      <%= react_component("Dog", name: @dog.name, size: @dog.size, age: @dog.age, sex: @dog.sex, bio: @dog.bio, id: @dog.id)%>
-      <%= react_component("DogPicsSlides", pics: @med_pics) %>
-    </div>
+  <div class='col-s-1 col-md-1 col-lg-1'>
+  </div>
+  <div class='col-s-10 col-md-10 col-lg-10'>
+    <%= react_component("Dog", name: @dog.name, size: @dog.size, age: @dog.age, sex: @dog.sex, bio: @dog.bio, id: @dog.id)%>
+  </div>
+  <div class='row'>
+    <%= react_component("DogPicsSlides", pics: @med_pics) %>
   </div>
 </div>

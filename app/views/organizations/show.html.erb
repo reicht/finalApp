@@ -1,10 +1,10 @@
 <div class='row page-panel'>
   <div class='span1'>
-    <div class='span10'>
-      <h1><%=@organization.name.upcase%></h1>
-      <p><%=@organization.email%></p>
-      <p><%=@organization.address%></p>
-      <%= react_component("Dogs", dogs: @organization.dogs)%>
-    </div>
+  </div>
+  <div class='span10'>
+    <h1><%=@organization.name.upcase%></h1>
+    <p><%=@organization.email%></p>
+    <p><%=@organization.address%></p>
+    <%= react_component("Dogs", dogs: @organization.dogs)%>
   </div>
 </div>
