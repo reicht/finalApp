@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
   acts_as_mappable
   has_many :watches, dependent: :destroy
   has_many :organizations, :through => :watches
+  has_many :dogs, :through => :organizations
 end

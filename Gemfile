@@ -45,6 +45,7 @@ group :test do
   gem 'database_cleaner'
 end
 
+gem 'rails-erd'
 gem 'geokit-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'autoprefixer-rails'

@@ -10,8 +10,8 @@ require 'pfapi.rb'
 
 ##USERS##
 
-User.create(email: "admin@doogle.com", password: "password")
-User.create(email: "guest@doogle.com", password: "password")
+User.create(name: "Jordan", email: "admin@doogle.com", password: "password")
+User.create(name: "Guest", email: "guest@doogle.com", password: "password")
 
 ##GROUPS##
 
@@ -176,8 +176,22 @@ Btrait.create(breed_id: 15, trait_id: 3)
 
 ##ORGANIZATIONS##
 
-Organization.create(name: "Austin Boxer Rescue", site_url: "www.austinboxerrescue.com", description: "Home of the rescued Boxers.")
-Organization.create(name: "Shiba Inu Rescue of Texas", site_url: "www.sirtx.org", description: "Amazing Shiba for Amazing people, because the shibes got the goods.")
+Organization.create(name: "Austin Pets Alive!", address: "1156 West Cesar Chavez", email: "adopt@austinpetsalive.org", city: "Austin", state: "TX", zip: "78704", pf_id: "TX1218")
+Organization.create(name: "Austin Boxer Rescue", address: "PO Box 14421", email: "info@austinboxerrescue.com", city: "Austin", state: "TX", zip: "78752", pf_id: "TX898")
+Organization.create(name: "Texas Sweeties Dog Rescue", address: "N/A Contact via Email", email: "sarah@texassweetiesdogrescue.org", city: "Pflugerville", state: "TX", zip: "78691", pf_id: "TX1732")
+Organization.create(name: "Pflugerville Pets Alive!", address: "N/A Contact via Email", email: "adopt@pflugervillepetsalive.org", city: "Pflugerville", state: "TX", zip: "78660", pf_id: "TX1837")
+Organization.create(name: "Central Texas Dachshund Rescue", address: "FM 1960 Rd. East #71 Humble, Texas 77346", email: "adopt@ctdr.org", city: "Austin", state: "TX", zip: "73301", pf_id: "TX562")
+Organization.create(name: "Cuz i Matter Animal Rescue", address: "PO Box 3751", email: "cuzimatteranimalrescue@gmail.com", city: "Pflugerville", state: "TX", zip: "78691", pf_id: "TX2128")
+Organization.create(name: "Terrier Rescue of Texas", address: "near IKEA", email: "jsimek21@gmail.com", city: "Round Rock", state: "TX", zip: "78681", pf_id: "TX1431")
+Organization.create(name: "Greyhound Pets of America/Central Texas", address: "P.O. BOX 10069", email: "adopt@gpa-centex.org", city: "Austin", state: "TX", zip: "78766", pf_id: "TX192")
+Organization.create(name: "Austin Sheltie Rescue Inc", address: "N/A Contact via Email", email: "swig@sbcglobal.net", city: "Austin", state: "TX", zip: "78731", pf_id: "TX1196")
+Organization.create(name: "CARE Companion Animal Rescue Effort", address: "N/A Contact via Email", email: "sue3574@yahoo.com", city: "Cedar Park", state: "TX", zip: "78613", pf_id: "TX765")
+Organization.create(name: "Catahoula Rescue Inc.", address: "Foster homes", email: "info@catahoularescue.com", city: "Austin", state: "TX", zip: "78751", pf_id: "TX363")
+Organization.create(name: "Austin Animal Center", address: "7201 Levander Loop", email: "animal.customerservice@austintexas.gov", city: "Austin", state: "TX", zip: "78702", pf_id: "TX514")
+Organization.create(name: "Central Texas SPCA, A No-Kill Animal Shelter", address: "909 S. Bagdad Rd", email: "manager@centraltexasspca.org", city: "Leander", state: "TX", zip: "78641", pf_id: "TX58")
+Organization.create(name: "Heart of Texas Lab Rescue, Inc.", address: "Phone: 512-259-5810", email: "Prefer phone contact", city: "Leander", state: "TX", zip: "78641", pf_id: "TX2084")
+Organization.create(name: "PAWS of Austin", address: "N/A Contact via Email", email: "pawsofaustin@yahoo.com", city: "Austin", state: "TX", zip: "78729", pf_id: "TX555")
+
 
 ##WATCHES##
 
@@ -186,41 +200,45 @@ Watch.create(user_id: 2, organization_id: 1)
 
 ##DOGS##
 
-@filtered_dogs = get_test_pups(5)
+Organization.all.each do |org|
 
-dogcount = @filtered_dogs.count
-dognum = 0
+  filtered_dogs = get_pups(org.pf_id)
 
-while dognum < dogcount
+  dogcount = filtered_dogs.count
+  dognum = 0
 
-  dognum += 1
-  dog = "dog" + dognum.to_s
-  doog = Dog.create(name: @filtered_dogs.dig(dog, :name), organization_id: 1, bio: @filtered_dogs.dig(dog, :bio), pf_id: @filtered_dogs.dig(dog, :pf_id), last_update: @filtered_dogs.dig(dog, :last_update),
-            sex: @filtered_dogs.dig(dog, :sex), size: @filtered_dogs.dig(dog, :size), mix: @filtered_dogs.dig(dog, :mix), shelter_id: @filtered_dogs.dig(dog, :shelter_id), age: @filtered_dogs.dig(dog, :age))
+  while dognum < dogcount
+
+    dognum += 1
+    dog = "dog" + dognum.to_s
+    doog = Dog.create(name: filtered_dogs.dig(dog, :name), organization_id: Organization.where(pf_id: (filtered_dogs.dig(dog, :shelter_id))).ids.first, bio: filtered_dogs.dig(dog, :bio), pf_id: filtered_dogs.dig(dog, :pf_id), last_update: filtered_dogs.dig(dog, :last_update),
+              sex: filtered_dogs.dig(dog, :sex), size: filtered_dogs.dig(dog, :size), mix: filtered_dogs.dig(dog, :mix), shelter_id: filtered_dogs.dig(dog, :shelter_id), age: filtered_dogs.dig(dog, :age))
 
 
-  sml_pic_count = @filtered_dogs.dig(dog, :sml_pic_urls).count
-  sml_pic_num = 0
+    sml_pic_count = filtered_dogs.dig(dog, :sml_pic_urls).count
+    sml_pic_num = 0
 
-  while sml_pic_num < sml_pic_count
-    sml_pic_num += 1
-    DogPic.create(dog_id: doog.id, size: "small", link: @filtered_dogs.dig(dog, :sml_pic_urls, "sml_pic" + sml_pic_num.to_s))
-  end
+    while sml_pic_num < sml_pic_count
+      sml_pic_num += 1
+      DogPic.create(dog_id: doog.id, size: "small", link: filtered_dogs.dig(dog, :sml_pic_urls, "sml_pic" + sml_pic_num.to_s))
+    end
 
-  med_pic_count = @filtered_dogs.dig(dog, :med_pic_urls).count
-  med_pic_num = 0
+    med_pic_count = filtered_dogs.dig(dog, :med_pic_urls).count
+    med_pic_num = 0
 
-  while med_pic_num < med_pic_count
-    med_pic_num += 1
-    DogPic.create(dog_id: doog.id, size: "medium", link: @filtered_dogs.dig(dog, :med_pic_urls, "med_pic" + med_pic_num.to_s))
-  end
+    while med_pic_num < med_pic_count
+      med_pic_num += 1
+      DogPic.create(dog_id: doog.id, size: "medium", link: filtered_dogs.dig(dog, :med_pic_urls, "med_pic" + med_pic_num.to_s))
+    end
 
-  lrg_pic_count = @filtered_dogs.dig(dog, :lrg_pic_urls).count
-  lrg_pic_num = 0
+    lrg_pic_count = filtered_dogs.dig(dog, :lrg_pic_urls).count
+    lrg_pic_num = 0
 
-  while lrg_pic_num < lrg_pic_count
-    lrg_pic_num += 1
-    DogPic.create(dog_id: doog.id, size: "large", link: @filtered_dogs.dig(dog, :lrg_pic_urls, "lrg_pic" + lrg_pic_num.to_s))
+    while lrg_pic_num < lrg_pic_count
+      lrg_pic_num += 1
+      DogPic.create(dog_id: doog.id, size: "large", link: filtered_dogs.dig(dog, :lrg_pic_urls, "lrg_pic" + lrg_pic_num.to_s))
+    end
+
   end
 
 end

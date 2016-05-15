@@ -17,26 +17,31 @@ var Nav_bar = React.createClass({
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavItem eventKey={1} href="/organizations">Dogs</NavItem>
-            <NavItem eventKey={2} href="/breeds">Breeds</NavItem>
-            <NavDropdown eventKey={3} title="Groups" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1} href="/groups/1">Herding</MenuItem>
-              <MenuItem eventKey={3.2} href="/groups/2">Hound</MenuItem>
-              <MenuItem eventKey={3.3} href="/groups/3">Non Sporting</MenuItem>
-              <MenuItem eventKey={3.4} href="/groups/4">Sporting</MenuItem>
-              <MenuItem eventKey={3.5} href="/groups/5">Terrier</MenuItem>
-              <MenuItem eventKey={3.6} href="/groups/6">Toy</MenuItem>
-              <MenuItem eventKey={3.7} href="/groups/7">Working</MenuItem>
+            <NavItem eventKey={1} href="/dogs">Dogs</NavItem>
+            <NavItem eventKey={2} href="/organizations">Organizations</NavItem>
+            <NavDropdown eventKey={3} title="Pick an Org" id="basic-nav-dropdown">
+              <MenuItem eventKey={3.1} href="/organizations/1">Austin Pets Alive!</MenuItem>
+              <MenuItem eventKey={3.2} href="/organizations/2">Austin Boxer Rescue</MenuItem>
+              <MenuItem eventKey={3.3} href="/organizations/3">Texas Sweeties Dog Rescue</MenuItem>
+              <MenuItem eventKey={3.4} href="/organizations/4">Pflugerville Pets Alive!</MenuItem>
+              <MenuItem eventKey={3.5} href="/organizations/5">Central Texas Dachshund Rescue</MenuItem>
+              <MenuItem eventKey={3.6} href="/organizations/6">Cuz i Matter Animal Rescue</MenuItem>
+              <MenuItem eventKey={3.7} href="/organizations/7">Terrier Rescue of Texas</MenuItem>
+              <MenuItem eventKey={3.8} href="/organizations/8">Greyhound Pets of America/Central Texas</MenuItem>
+              <MenuItem eventKey={3.9} href="/organizations/9">Austin Sheltie Rescue Inc</MenuItem>
+              <MenuItem eventKey={3.10} href="/organizations/10">CARE Companion Animal Rescue Effort</MenuItem>
+              <MenuItem eventKey={3.11} href="/organizations/11">Catahoula Rescue Inc.</MenuItem>
+              <MenuItem eventKey={3.12} href="/organizations/12">Austin Animal Center</MenuItem>
+              <MenuItem eventKey={3.13} href="/organizations/13">Central Texas SPCA, A No-Kill Animal Shelter</MenuItem>
+              <MenuItem eventKey={3.14} href="/organizations/14">Heart of Texas Lab Rescue, Inc.</MenuItem>
+              <MenuItem eventKey={3.15} href="/organizations/15">PAWS of Austin</MenuItem>
             </NavDropdown>
           </Nav>
             <Nav pullRight>
-              <NavItem eventKey={1} href="#">Purpose</NavItem>
-              <NavItem eventKey={2} href="#">Contact</NavItem>
+              <NavItem eventKey={1} href="/purpose">Purpose</NavItem>
+              <NavItem eventKey={2} href="/contact">Contact</NavItem>
             </Nav>
         </Navbar.Collapse>
       </Navbar>
       )}
 });
-
-// <a className="btn btn-custom">click</a>
-// <Button bsStyle="" className="btn-custom">click</Button>

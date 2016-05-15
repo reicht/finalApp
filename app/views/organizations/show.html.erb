@@ -2,8 +2,8 @@
   <div class='span1'>
     <div class='span10'>
       <h1><%=@organization.name.upcase%></h1>
-      <p><%=@organization.description%></p>
-      <a href="http://<%=@organization.site_url%>">Visit the <%=@organization.name%> HomePage.</a>
+      <p><%=@organization.email%></p>
+      <p><%=@organization.address%></p>
       <%= react_component("Dogs", dogs: @organization.dogs)%>
     </div>
   </div>

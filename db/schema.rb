@@ -60,18 +60,21 @@ ActiveRecord::Schema.define(version: 20160512135534) do
   add_index "dog_pics", ["dog_id"], name: "index_dog_pics_on_dog_id", using: :btree
 
   create_table "dogs", force: :cascade do |t|
-    t.string   "pf_id",           null: false
-    t.string   "shelter_id",      null: false
-    t.string   "name",            null: false
-    t.string   "bio",             null: false
-    t.string   "age",             null: false
-    t.string   "sex",             null: false
-    t.string   "size",            null: false
-    t.string   "mix",             null: false
-    t.datetime "last_update",     null: false
+    t.string   "pf_id",                                      null: false
+    t.string   "shelter_id",                                 null: false
+    t.string   "name",                                       null: false
+    t.string   "bio",             default: "None Available"
+    t.string   "age",                                        null: false
+    t.string   "sex",                                        null: false
+    t.string   "size",                                       null: false
+    t.string   "mix",                                        null: false
+    t.string   "sm_prof_url"
+    t.string   "md_prof_url"
+    t.string   "lg_prof_url"
+    t.datetime "last_update",                                null: false
     t.integer  "organization_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
   end
 
   add_index "dogs", ["organization_id"], name: "index_dogs_on_organization_id", using: :btree
@@ -94,12 +97,16 @@ ActiveRecord::Schema.define(version: 20160512135534) do
   end
 
   create_table "organizations", force: :cascade do |t|
-    t.string   "name",        null: false
-    t.string   "site_url"
-    t.string   "description"
+    t.string   "name",       null: false
+    t.string   "email"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "pf_id"
     t.integer  "dogs_count"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "specs", force: :cascade do |t|
@@ -117,6 +124,7 @@ ActiveRecord::Schema.define(version: 20160512135534) do
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.string   "name",                           null: false
     t.string   "email",                          null: false
     t.string   "encrypted_password", limit: 128, null: false
     t.string   "confirmation_token", limit: 128

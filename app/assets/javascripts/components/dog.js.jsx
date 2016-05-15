@@ -1,5 +1,6 @@
 var Jumbotron = ReactBootstrap.Jumbotron;
 var Glyphicon = ReactBootstrap.Glyphicon;
+var Image = ReactBootstrap.Image;
 var Button = ReactBootstrap.Button;
 
 var Dog = React.createClass({

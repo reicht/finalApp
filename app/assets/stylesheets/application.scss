@@ -15,6 +15,8 @@
  @import 'bootstrap-sprockets';
  @import "bootstrap";
 
+$primary-color: #222222;
+
 body {
   background-image: url("https://source.unsplash.com/collection/218829/1600x900");
   background-attachment: fixed;
@@ -42,25 +44,17 @@ a:hover {
   color: black;
 }
 
-.navbar-default {
-  background-color: #619960;
-  border-color: #A9A2CC;
-}
-
 .btn {
   border-color: #F7FFE4;
 }
 
-.btn-compliment {
-  background: #CDA5FF;
-}
-
-.btn-main {
-  background: #7C4DB0;
-}
-
 .navbar {
   border-radius: 0;
+}
+
+.nav-bottom {
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
 .page-panel {

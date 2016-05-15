@@ -8,7 +8,7 @@ var Dogs = React.createClass({
     return (
       <ul>
         {this.props.dogs.map(function(result, index) {
-          return <DogPanel name={result.name} id={result.id} sex={result.sex} age={result.age} org_name={result.organization_id} key={index}/>;
+          return <DogPanel name={result.name} id={result.id} sex={result.sex} age={result.age} pic_url={result.md_pic_url} org_name={result.org_name} organization_id={result.organization_id} key={index}/>;
         })}
       </ul>
     );

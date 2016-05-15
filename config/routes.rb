@@ -7,12 +7,15 @@ Rails.application.routes.draw do
     root 'dashboard#home'
 
     resources :users
-    resources :breeds
-    resources :traits
+    resources :breeds, only: [:show, :index]
     resources :groups, only: [:show, :index]
 
-    resources :organizations do
-      resources :dogs
+    get "/dogs" => "dashboard#dogs", as: "dogs_page"
+    get "/contact" => "dashboard#contact", as: "contact_page"
+    get "/purpose" => "dashboard#purpose", as: "purpose_pge"
+
+    resources :organizations, only: [:show, :index] do
+      resources :dogs, only: [:show, :index]
     end
 
     resources :passwords, controller: "clearance/passwords", only: [:create, :new]

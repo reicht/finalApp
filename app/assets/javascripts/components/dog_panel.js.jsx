@@ -9,7 +9,9 @@ var DogPanel = React.createClass({
     age: React.PropTypes.string,
     breeds: React.PropTypes.array,
     sex: React.PropTypes.string,
-    org_name: React.PropTypes.number,
+    org_name: React.PropTypes.string,
+    pic_url: React.PropTypes.string,
+    organization_id: React.PropTypes.number,
     id: React.PropTypes.number
 
 
@@ -22,6 +24,7 @@ var DogPanel = React.createClass({
         <Panel className="see-through-panel">
           <div className="row">
             <div classNam ="Col md={3}">
+              <Image src={this.props.pic_url}/>
             </div>
             <div className="Col md={7}">
               <h2>{this.props.name}</h2>
@@ -30,7 +33,7 @@ var DogPanel = React.createClass({
               </p>
             </div>
             <div className="Col md={2}">
-              <a href = {'/organizations/' + this.props.org_name + '/dogs/' + this.props.id}>
+              <a href = {'/organizations/' + this.props.organization_id + '/dogs/' + this.props.id}>
                 <div className='btn btn-primary pull-right'>Visit my Page</div>
               </a>
             </div>
