@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
     delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
 
-    root 'dashboard#home'
+    root 'dashboard#home', as: :root
     post "/watches" => "watches#create"
     delete "/watches" => "watches#destroy"
 
