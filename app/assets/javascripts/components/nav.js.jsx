@@ -6,6 +6,16 @@ var MenuItem = ReactBootstrap.MenuItem;
 
 var Nav_bar = React.createClass({
 
+  handleSignOut: function () {
+      $.ajax({
+        method: "DELETE",
+        url: '/sign_out',
+        success: function(response) {
+          window.location.replace("/");
+        }
+      });
+  },
+
   render: function () {
     return (
       <Navbar inverse className="nav-custom">
@@ -38,8 +48,7 @@ var Nav_bar = React.createClass({
             </NavDropdown>
           </Nav>
             <Nav pullRight>
-              <NavItem eventKey={1} href="/purpose">Purpose</NavItem>
-              <NavItem eventKey={2} href="/contact">Contact</NavItem>
+              <NavItem eventKey={1} onClick={this.handleSignOut}>Log Out</NavItem>
             </Nav>
         </Navbar.Collapse>
       </Navbar>

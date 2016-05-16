@@ -26,8 +26,8 @@ var DogBlock = React.createClass({
           <div className="dog-block-spacer">
           </div>
           <div className="dog-block-filter">
-            <p>{this.props.name}</p>
-            <p>{this.props.age} | {this.props.sex}</p>
+            <span>{this.props.name}</span> <span className="pull-right">{this.props.age} | {this.props.sex}</span>
+            <p>{this.props.org_name}</p>
           </div>
         </a>
       </div>

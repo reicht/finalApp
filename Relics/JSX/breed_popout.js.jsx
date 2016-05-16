@@ -4,3 +4,11 @@
     <iframe src="http://www.akc.org/embeds/breed-standard/{this.props.akc_name}" frameborder="0" width="90%" height="90%"></iframe>
   </div>
 </Panel>
+
+
+
+<p>{this.props.breeds.map(function(val, index) {
+  return (
+    <Badge key={index}>val</Badge>
+  )
+})}</p>

@@ -1,9 +1,9 @@
 <div class='row page-panel'>
-  <div class='span1'>
+  <div class='col-s-1 col-md-1 col-lg-1'>
   </div>
-  <div class='span10'>
+  <div class='col-s-10 col-md-10 col-lg-10'>
     <h1>Listed Rescue Organizations</h1>
     <hr>
-    <%= react_component("OrgPanels", orgs: @organizations.all) %>
+    <%= react_component("OrgPanels", orgs: @organizations.all, watches: @user.organizations.ids) %>
   </div>
 </div>

@@ -2,6 +2,7 @@ class OrganizationsController < ApplicationController
 
   def index
     @organizations = Organization.all
+    @user = current_user
   end
 
   def show

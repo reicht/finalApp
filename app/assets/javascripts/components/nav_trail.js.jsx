@@ -14,6 +14,11 @@ var NavTrail = React.createClass({
             <p>Doogle</p>
           </Navbar.Brand>
         </Navbar.Header>
+        <Nav pullRight>
+          <NavItem eventKey={1} href="/purpose">Purpose</NavItem>
+          <NavItem eventKey={2} href="/upcoming">Upcoming</NavItem>
+          <NavItem eventKey={3} href="/contact">Contact</NavItem>
+        </Nav>
       </Navbar>
       )}
 });

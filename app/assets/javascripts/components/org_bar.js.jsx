@@ -1,4 +1,5 @@
 var Panel = ReactBootstrap.Panel;
+var Badge = ReactBootstrap.Badge;
 
 var OrgBar = React.createClass({
   propTypes: {
@@ -29,11 +30,12 @@ var OrgBar = React.createClass({
       <Panel className="see-through-panel">
         <div className="row">
           <a href={'/organizations/' + this.props.id}>
-            <div className="col-s-9 col-md-9 col-lg-9">
-              <h1 className="in-line">{this.props.name}</h1> <h3 className="in-line">{this.props.email}</h3>
-              <p> Currently has {this.props.dog_count} dogs listed.                         {this.props.address} </p>
-              <p> {this.props.city}, {this.props.state}, {this.props.zip} </p>
-            </div>
+          <div className="col-s-9 col-md-9 col-lg-9">
+            <h2 className="org-name">{this.props.name}</h2>
+            <p> Currently has <Badge>{this.props.dog_count}</Badge> dogs listed.  </p>
+            <p> {this.props.address}, {this.props.city}, {this.props.state}, {this.props.zip} </p>
+            <span className="smallprint">{this.props.email}</span>
+          </div>
             <div className="col-s-3 col-md-3 col-lg-3">
               <div className="col-s-4 col-md-4 col-lg-4">
               </div>

@@ -58,8 +58,31 @@ a:hover {
   margin-bottom: 0;
 }
 
+.border-button {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
+.red {
+  color: red;
+}
+
+.pink {
+
+  color: pink;
+}
+
+.pup-pic .img-responsive {
+  padding: 0 auto;
+}
+
 .heart-spacer {
-  height: 5em;
+  height: 55px;
+}
+
+.heart-bar {
+  height: 145px;
 }
 
 .page-panel {
@@ -95,14 +118,26 @@ a:hover {
 }
 
 .dog-block-spacer {
-  height: 75%;
+  height: 70%;
 }
 
 .dog-block-filter {
-  height: 25%;
+  height: 30%;
   width: 100%;
   background-color: rgba(222, 222, 222, .65);
   padding: 0.5em;
+}
+
+.session-space {
+  height:8em;
+}
+
+.session-panel {
+  width: 65%;
+}
+
+.smallprint {
+  font-size: 12px;
 }
 
 .pup-profile {
@@ -115,10 +150,25 @@ a:hover {
   overflow: hidden;
 }
 
+.org-name {
+  margin-top: 10px;
+}
+
 #footer {
  position:fixed;
  left:0px;
  bottom:0px;
  height:30px;
  width:100%;
+}
+
+@media (max-width: 500px) {
+  .session-space {
+    height:4em;
+  }
+
+  .session-panel {
+    margin: auto;
+    min-width: 175px;
+  }
 }

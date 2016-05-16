@@ -1,7 +1,6 @@
 var Button = ReactBootstrap.Button;
 var Panel = ReactBootstrap.Panel;
 var Image = ReactBootstrap.Image;
-var Col = ReactBootstrap.Col;
 
 var DogPanel = React.createClass({
   propTypes: {
@@ -13,8 +12,6 @@ var DogPanel = React.createClass({
     prof_url: React.PropTypes.string,
     organization_id: React.PropTypes.number,
     id: React.PropTypes.number
-
-
   },
 
 
@@ -27,10 +24,9 @@ var DogPanel = React.createClass({
               <Image src={this.props.prof_url} className="pup-profile" responsive rounded/>
             </div>
             <div className="col-s-8 col-md-8 col-lg-8">
+              <p className="pull-right">{this.props.org_name}</p>
               <h2>{this.props.name}</h2>
-              <p>{this.props.age}    |    {this.props.sex}</p>
-              <p>
-              </p>
+              <h4>{this.props.age}    |    {this.props.sex}</h4>
             </div>
           </div>
         </Panel>

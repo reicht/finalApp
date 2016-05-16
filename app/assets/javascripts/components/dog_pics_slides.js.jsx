@@ -1,8 +1,4 @@
-var Carousel = ReactBootstrap.Carousel;
-var Grid = ReactBootstrap.Grid;
-var Row = ReactBootstrap.Row;
 var Image = ReactBootstrap.Image;
-var Col = ReactBootstrap.Col;
 
 var DogPicsSlides = React.createClass({
   propTypes: {
@@ -12,17 +8,25 @@ var DogPicsSlides = React.createClass({
 
   render: function() {
     return (
-      <Grid>
-        <Row>
-        {this.props.pics.map(function(result, index) {
-          return (
-            <Col xs={6} md={4} key={index}>
-              <Image src={result} key={index+.1} thumbnail />
-            </Col>
-          )
-        })}
-        </Row>
-      </Grid>
+      <div className="row">
+      {this.props.pics.map(function(result, index) {
+        return (
+          <div className="col-s-4 col-md-4 col-lg-4 pup-pic  img-responsive" key={index}>
+            <Image src={result} key={index+.1} thumbnail />
+          </div>
+        )
+      })}
+      </div>
     );
   }
 });
+
+<div className="row">
+{this.props.pics.map(function(result, index) {
+  return (
+    <div className="col-s-4 col-md-4 col-lg-4 pup-pic  img-responsive" key={index}>
+      <Image src={result} key={index+.1} thumbnail />
+    </div>
+  )
+})}
+</div>

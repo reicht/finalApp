@@ -40,9 +40,8 @@ var Dog = React.createClass({
     return (
       <Jumbotron className="see-through">
       <h1>{this.props.name}</h1>
-      <h3>A {size_text}, {sex_text}, {this.props.age} pup.</h3>
+      <h3>A {size_text}, {this.props.age}, {sex_text} pup.</h3>
       <p>{this.props.bio}</p>
-      <Glyphicon glyph="heart"/>
       </Jumbotron>
     );
   }
