@@ -30,7 +30,7 @@ def get_pups(org_pfid)
 
   if pets.fetch("pet").length == 0
     puts "Doh"
-  elsif pets.fetch("pet").length == 1
+  elsif pets.length == 1
 
     if pets.fetch('pet').dig('animal', '$t') == 'Dog'
       dogs << pets.fetch('pet')
