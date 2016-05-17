@@ -26,8 +26,6 @@ def get_pups(org_pfid)
 
   pets = JSON.parse(response.body).fetch("petfinder").fetch("pets")
 
-  binding.pry
-
   dogs = []
 
   if pets.length == 0
