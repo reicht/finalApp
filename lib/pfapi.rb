@@ -28,15 +28,13 @@ def get_pups(org_pfid)
 
   dogs = []
 
-  if pets.length == 0
+  if pets.fetch("pet").length == 0
     puts "Doh"
-  elsif pets.length == 1
+  elsif pets.fetch("pet").length == 1
 
-    # if pets.fetch('pet').dig('animal', '$t') == 'Dog'
-    #   dogs << pets.fetch('pet')
-    # end
-
-    puts "hmm"
+    if pets.fetch('pet').dig('animal', '$t') == 'Dog'
+      dogs << pets.fetch('pet')
+    end
 
   else
 
