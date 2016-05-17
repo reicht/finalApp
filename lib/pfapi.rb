@@ -26,12 +26,26 @@ def get_pups(org_pfid)
 
   pets = JSON.parse(response.body).fetch("petfinder").fetch("pets")
 
+  binding.pry
+
   dogs = []
 
-  pets.fetch("pet").each do |pet|
-    if pet.dig("animal", "$t") == "Dog"
-      dogs << pet
+  if pets.length == 0
+    puts "Doh"
+  elsif pets.length == 1
+
+    if pets.fetch('pet').dig('animal', '$t') == 'Dog'
+      dogs << pets.fetch('pet')
     end
+
+  else
+
+    pets.fetch("pet").each do |pet|
+      if pet.dig("animal", "$t") == "Dog"
+        dogs << pet
+      end
+    end
+
   end
 
   @dogs_filtered = {}
