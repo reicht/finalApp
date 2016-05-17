@@ -58,6 +58,7 @@ gem 'react-rails', '~> 1.5.0'
 gem 'react-bootstrap-rails'
 gem 'httparty'
 gem 'dotenv-rails'
+gem "font-awesome-rails"
 
 group :production do
   gem 'rails_12factor'

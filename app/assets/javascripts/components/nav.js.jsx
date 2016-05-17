@@ -8,7 +8,7 @@ var Nav_bar = React.createClass({
 
   handleSignOut: function () {
       $.ajax({
-        method: "DELETE",
+        method: "GET",
         url: '/sign_out',
         success: function(response) {
           window.location.replace("/");

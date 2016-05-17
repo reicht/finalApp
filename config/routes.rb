@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   constraints Clearance::Constraints::SignedIn.new do
 
-    delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
+    get "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
 
     root 'dashboard#home', as: :root
     post "/watches" => "watches#create"
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
     get "/dogs" => "dashboard#dogs", as: "dogs_page"
     get "/contact" => "dashboard#contact", as: "contact_page"
-    get "/purpose" => "dashboard#purpose", as: "purpose_page"
+    get "/about" => "dashboard#about", as: "about_page"
     get "/upcoming" => "dashboard#upcoming", as: "upcoming_page"
 
     resources :organizations, only: [:show, :index]
