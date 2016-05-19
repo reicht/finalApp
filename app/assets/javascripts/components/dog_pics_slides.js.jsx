@@ -11,7 +11,7 @@ var DogPicsSlides = React.createClass({
       <div className="row">
       {this.props.pics.map(function(result, index) {
         return (
-          <div className="col-s-4 col-md-4 col-lg-4 pup-pic  img-responsive" key={index}>
+          <div className="col-sm-12 pup-pic img-responsive" key={index}>
             <Image src={result} key={index+.1} thumbnail />
           </div>
         )

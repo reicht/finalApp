@@ -57,19 +57,16 @@ var OrgPanel = React.createClass({
       <Panel className="see-through-panel">
         <div className="row">
           <a href={'/organizations/' + this.props.id}>
-            <div className="col-s-9 col-md-9 col-lg-9">
+            <div className="col-sm-9">
               <h2 className="org-name">{this.props.name}</h2>
               <p> Currently has <Badge>{this.props.dog_count}</Badge> dogs listed.  </p>
               <p> {this.props.address}, {this.props.city}, {this.props.state}, {this.props.zip} </p>
-              <span className="smallprint">{this.props.email}</span>
+              <p>{this.props.email}</p>
             </div>
           </a>
-            <div className="col-s-3 col-md-3 col-lg-3">
-              <a href={'/organizations/' + this.props.id}>
-                <div className="col-s-4 col-md-4 col-lg-4 heart-bar">
-                </div>
-              </a>
-                <div className="col-s-4 col-md-4 col-lg-4">
+            <div className="col-sm-3">
+
+                <div className="col-sm-4">
                   <a href={'/organizations/' + this.props.id}>
                   <div className="heart-spacer">
                   </div>
@@ -80,10 +77,7 @@ var OrgPanel = React.createClass({
                   </div>
                   </a>
                 </div>
-                <a href={'/organizations/' + this.props.id}>
-                <div className="col-s-4 col-md-4 col-lg-4 heart-bar">
-                </div>
-                </a>
+
             </div>
         </div>
       </Panel>

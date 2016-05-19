@@ -20,9 +20,7 @@ $primary-color: #222222;
 $border-color: rgba(255, 255, 255, .55);
 
 body {
-  background-image: url("https://source.unsplash.com/collection/218829/1600x900");
-  background-attachment: fixed;
-  background-size: 100% auto;
+  margin-bottom: 100px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -31,6 +29,11 @@ h1, h2, h3, h4, h5, h6 {
 
 p, a, div, li {
   font-family: 'Lato', sans-serif;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 ul {
@@ -45,6 +48,10 @@ a{
 a:hover {
   text-decoration: none;
   color: black;
+}
+
+.img-thumbnail {
+  margin-left: 2em;
 }
 
 .btn {
@@ -91,36 +98,87 @@ a:hover {
   height: 145px;
 }
 
+.dog-banner {
+  background-image: url("https://source.unsplash.com/collection/218829/1600x900");
+  height: 30em;
+  background-size: cover;
+}
+
+.sign-in-wrapper {
+    border: 1px solid #efefef;
+    width: 65%;
+    margin: 2em auto;
+    label {
+      width: 80%;
+      margin-left: 10%;
+    }
+    input, h2 {
+      width: 80%;
+      margin-left: 10%;
+      margin-bottom: 1em;
+    }
+}
+
+.submit-field {
+  input {
+    background: #7FBF52;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    padding: 0.5em;
+  }
+}
+
+.other-links {
+  text-align: center;
+  margin-bottom: 2em;
+  a {
+    text-decoration: underline;
+  }
+}
+
 .page-panel {
-  background: rgba(247, 255, 228, .80);
-  padding: 1em;
+}
+
+
+
+.dog-block-wrapper {
+  overflow: hidden;
+  margin-top: 1em;
   margin-bottom: 3em;
 }
 
-.see-through {
-  background: rgba(247, 255, 228, 0);
-}
-
-.see-through-panel {
-  background: rgba(247, 255, 228, .2);
-}
-
 .dog-block {
-  display: inline-block;
+
+  @media (min-width: 500px){
+      width: 30%;
+      float: left;
+      margin-bottom: 0;
+      height: 17em;
+
+        &:first-child {
+          margin-right: 5%;
+        }
+        &:last-child {
+          margin-left: 5%;
+        }
+  }
   background-size: cover;
-  border: 2px;
-  border-style: solid;
-  margin: .2em;
-  width: 31%;
-  height: 17em;
+  border: 2px solid $border-color;
+  box-sizing: border-box;
+  height: 20em;
   padding: 0;
-  border-color: $border-color;
+  margin-bottom: 2em;
+
+
 }
 
 .panel {
   border: 2px;
   border-style: solid;
-  border-color: $border-color;
+  border-color: #efefef;
 }
 
 .dog-block-spacer {
@@ -134,26 +192,22 @@ a:hover {
   padding: 0.5em;
 }
 
-.session-space {
-  height:8em;
-}
-
-.session-panel {
-  width: 65%;
-}
 
 .smallprint {
   font-size: 12px;
 }
 
 .pup-profile {
-  height: 260px;
   width: 260px;
 }
 
 .standard-bearer {
   height: 1000px;
   overflow: hidden;
+}
+
+.org-dogs {
+  padding: 0;
 }
 
 .org-name {
@@ -166,15 +220,4 @@ a:hover {
  bottom:0px;
  height:30px;
  width:100%;
-}
-
-@media (max-width: 500px) {
-  .session-space {
-    height:4em;
-  }
-
-  .session-panel {
-    margin: auto;
-    min-width: 175px;
-  }
 }

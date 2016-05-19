@@ -1,10 +1,8 @@
-<div class='row page-panel'>
-  <div class='span1'>
-    <div class='span10'>
-      <h1>The <%=@group.name%> Group</h1>
-      <p><%=@group.description%></p>
-      <hr>
-      <%= react_component('Breeds', breeds: @group.breeds) %>
-    </div>
+<div class='row'>
+  <div class='col-sm-12'>
+    <h1>The <%=@group.name%> Group</h1>
+    <p><%=@group.description%></p>
+    <hr>
+    <%= react_component('Breeds', breeds: @group.breeds) %>
   </div>
 </div>

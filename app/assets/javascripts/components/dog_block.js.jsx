@@ -21,7 +21,7 @@ var DogBlock = React.createClass({
     };
 
     return (
-      <div className="col-s-4 col-md-4 col-lg-4 dog-block" style={divImage}>
+      <div className="dog-block" style={divImage}>
         <a href={"/dogs/" + this.props.id}>
           <div className="dog-block-spacer">
           </div>

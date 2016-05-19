@@ -6,7 +6,7 @@ var Dogs = React.createClass({
   render: function() {
 
     return (
-      <ul>
+      <ul className="org-dogs">
         {this.props.dogs.map(function(result, index) {
           return <DogPanel name={result.name} id={result.id} sex={result.sex} age={result.age} prof_url={result.md_prof_url} org_name={result.orgs_name} organization_id={result.organization_id} key={index}/>;
         })}

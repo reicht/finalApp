@@ -20,11 +20,11 @@ var DogPanel = React.createClass({
       <a href={'/dogs/' + this.props.id}>
         <Panel className="see-through-panel">
           <div className="row">
-            <div className ="col-s-4 col-md-4 col-lg-4">
+            <div className ="col-sm-4">
               <Image src={this.props.prof_url} className="pup-profile" responsive rounded/>
             </div>
-            <div className="col-s-8 col-md-8 col-lg-8">
-              <p className="pull-right">{this.props.org_name}</p>
+            <div className="col-sm-8">
+              <p>{this.props.org_name}</p>
               <h2>{this.props.name}</h2>
               <h4>{this.props.age}    |    {this.props.sex}</h4>
             </div>

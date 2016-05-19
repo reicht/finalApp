@@ -38,11 +38,11 @@ var Dog = React.createClass({
       sex_text = 'Female'
     }
     return (
-      <Jumbotron className="see-through">
+      <Panel className="see-through">
       <h1>{this.props.name}</h1>
       <h3>A {size_text}, {this.props.age}, {sex_text} pup.</h3>
       <p>{this.props.bio}</p>
-      </Jumbotron>
+      </Panel>
     );
   }
 });

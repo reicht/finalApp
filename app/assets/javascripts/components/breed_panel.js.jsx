@@ -16,7 +16,7 @@ var BreedPanel = React.createClass({
       <a href={'/breeds/' + this.props.id}>
         <Panel className="see-through-panel">
           <div className="row">
-            <div className="col-xs=8  col-md-8 col-lg-8">
+            <div className="col-sm-8">
               <h1 className="in-line">{this.props.name}</h1> <h3 className="in-line">{this.props.group} Group</h3>  Ranked: {this.props.akc_rank}
               <p> A generally {this.props.size} sized, {this.props.energy} dog.</p>
             </div>
